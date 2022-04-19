@@ -83,8 +83,8 @@ console.log("Primeiro número:" , numero1 , " / Segundo número:" , numero2)
 
 console.log("O primeiro número é maior que o segundo?" , numero1Convert > numero2Convert)
 console.log("O primeiro número é igual ao segundo?" , numero1Convert === numero2Convert)
-console.log("O primeiro número é divisível pelo segundo?" , numero1Convert >= numero2Convert)
-console.log("O segundo número é divisível pelo primeiro?" , numero1Convert <= numero2Convert)
+console.log("O primeiro número é divisível pelo segundo?" , numero1Convert%numero2Convert===0)
+console.log("O segundo número é divisível pelo primeiro?" , numero2Convert%numero2Convert===0)
 
 
 
