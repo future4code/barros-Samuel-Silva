@@ -3,21 +3,21 @@
 //    -> NÃO MODIFIQUE OS PARÂMETROS DAS FUNÇÕES!!! ()
 
 
-//EXERCÍCIO 01 
-function retornaTamanhoArray(array) {
-let tamanhoDaLista = array.length  
-return tamanhoDaLista 
-}
- retornaTamanhoArray[3, 2, 1, 4, 7]
+// //EXERCÍCIO 01 
+// function retornaTamanhoArray(array) {
+// let tamanhoDaLista = array.length  
+// return tamanhoDaLista 
+// }
+//  retornaTamanhoArray[3, 2, 1, 4, 7]
  
 
-// EXERCÍCIO 02
-function retornaArrayInvertido(array) {
-  let arrayInvertido = array.reverse()
-  return arrayInvertido
-}
-retornaArrayInvertido[0,8,23,16,10,15,41,12,13] 
-///////// TEM DESAFIO///////////
+// // EXERCÍCIO 02
+// function retornaArrayInvertido(array) {
+//   let arrayInvertido = array.reverse()
+//   return arrayInvertido
+// }
+// retornaArrayInvertido[0,8,23,16,10,15,41,12,13] 
+// ///////// TEM DESAFIO///////////
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
