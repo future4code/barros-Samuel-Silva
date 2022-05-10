@@ -65,33 +65,39 @@
 // }
 // retornaMaiorNumero[1,2,3,4,5,6,7]
 
-// EXERCÍCIO 07
-function retornaObjetoEntreDoisNumeros(num1, num2) {
-  let atributo1
-  let atributo2
-  let atributo3
-   if (num1 < num2) {
-            atributo1 = num2
-            atributo2 = (num2 % num1 === 0)
-            atributo3 = (num2 - num1)
-   } else {
-            atributo1 = num1
-            atributo2 = (num1 % num2 === 0)
-            atributo3 = (num1 - num2)
-            }
-    let objeto = {
-        maiorNumero: atributo1,
-        maiorDivisivelPorMenor: atributo2,
-        diferenca: atributo3
-    }
-return objeto
-}
-retornaObjetoEntreDoisNumeros[15,30]
+// // EXERCÍCIO 07
+// function retornaObjetoEntreDoisNumeros(num1, num2) {
+//   let atributo1
+//   let atributo2
+//   let atributo3
+//    if (num1 < num2) {
+//             atributo1 = num2
+//             atributo2 = (num2 % num1 === 0)
+//             atributo3 = (num2 - num1)
+//    } else {
+//             atributo1 = num1
+//             atributo2 = (num1 % num2 === 0)
+//             atributo3 = (num1 - num2)
+//             }
+//     let objeto = {
+//         maiorNumero: atributo1,
+//         maiorDivisivelPorMenor: atributo2,
+//         diferenca: atributo3
+//     }
+// return objeto
+// }
+// retornaObjetoEntreDoisNumeros[15,30]
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {
-   
-}
+// function retornaNPrimeirosPares(n) {
+//     let arrayPares = []
+//     for (let i=0; i<n;i++){
+//        let numeros = i*2
+//        arrayPares.push(numeros)
+//    }
+//     return arrayPares   
+// }
+// retornaNPrimeirosPares(3)
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
