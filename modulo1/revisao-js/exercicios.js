@@ -38,21 +38,21 @@
 // }
 //     retornaNumerosPares[1,2,3,4,5,6,7,8]
 
-//EXERCÍCIO 05
-function retornaNumerosParesElevadosADois(array) {
-    let arrayPares = array.filter((validaPar) => {
-    return (validaPar %2 === 0)
-     })
+// //EXERCÍCIO 05
+// function retornaNumerosParesElevadosADois(array) {
+//     let arrayPares = array.filter((validaPar) => {
+//     return (validaPar %2 === 0)
+//      })
     
-      let arrayParesAoQuadrado = arrayPares.map((numeros) => {
-            return (Math.pow(numeros,2))
-      })
-      return arrayParesAoQuadrado
-    }
-     retornaNumerosParesElevadosADois[1,2,3,4,5,6]    
+//       let arrayParesAoQuadrado = arrayPares.map((numeros) => {
+//             return (Math.pow(numeros,2))
+//       })
+//       return arrayParesAoQuadrado
+//     }
+//      retornaNumerosParesElevadosADois[1,2,3,4,5,6]    
 
 
-// EXERCÍCIO 06
+// //EXERCÍCIO 06
 // function retornaMaiorNumero(array) {
 //     let maiorNumero = -Infinity
 //     for( let i=0; i < array.length ; i++ ) {
