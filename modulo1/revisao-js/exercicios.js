@@ -116,8 +116,16 @@
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
-}
+   function ordenar (a,b) {
+    return (a -b)
+    }
+    array.sort(ordenar)
+    segundoMaior = array[array.length-2]
+    segundoMenor = array[1]
+    return [segundoMaior,segundoMenor]
+       }
+       
+//retornaSegundoMaiorESegundoMenor[1,2,3,4,5,6,7]
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
