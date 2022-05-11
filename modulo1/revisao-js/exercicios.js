@@ -114,22 +114,21 @@
 //   return tipoTriangulo  
 // }
 
-// EXERCÍCIO 10
-function retornaSegundoMaiorESegundoMenor(array) {
-   function ordenar (a,b) {
-    return (a -b)
-    }
-    array.sort(ordenar)
-    segundoMaior = array[array.length-2]
-    segundoMenor = array[1]
-    return [segundoMaior,segundoMenor]
-       }
+// // EXERCÍCIO 10
+// function retornaSegundoMaiorESegundoMenor(array) {
+//    function ordenar (a,b) {
+//     return (a -b)
+//     }
+//     array.sort(ordenar)
+//     segundoMaior = array[array.length-2]
+//     segundoMenor = array[1]
+//     return [segundoMaior,segundoMenor]
+//        }
        
-//retornaSegundoMaiorESegundoMenor[1,2,3,4,5,6,7]
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+   return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
 }
 
 // EXERCÍCIO 12
