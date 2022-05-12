@@ -5,19 +5,26 @@
 
 // //EXERCÍCIO 01 
 // function retornaTamanhoArray(array) {
-// let tamanhoDaLista = array.length  
-// return tamanhoDaLista 
+//     let tamanhoDaLista = array.length
+//     return tamanhoDaLista
 // }
-//  retornaTamanhoArray[3, 2, 1, 4, 7]
- 
+// retornaTamanhoArray[3, 2, 1, 4, 7]
+
 
 // // EXERCÍCIO 02
-// function retornaArrayInvertido(array) {
-//   let arrayInvertido = array.reverse()
-//   return arrayInvertido
+function retornaArrayInvertido(array) {
+      let arrayInvertido = array.reverse()
+      return arrayInvertido
+  }
+  // retornaArrayInvertido[0, 8, 23, 16, 10, 15, 41, 12, 13]
+  // /////////  DESAFIO///////////
+//   let arrayInvertido = []
+//   for (let i = -1; i < array.length; i++) {
+//     arrayInvertido.push(array.length)
+//     console.log(arrayInvertido)
+//     //return arrayPop
+//   }
 // }
-// retornaArrayInvertido[0,8,23,16,10,15,41,12,13] 
-// ///////// TEM DESAFIO///////////
 
 // // EXERCÍCIO 03
 // function retornaArrayOrdenado(array) {
@@ -31,132 +38,157 @@
 
 // //EXERCÍCIO 04
 // function retornaNumerosPares(array) {
-//   let arrayPares = array.filter((validaPar) => {
-//      return validaPar %2 === 0
-//   })
-//   return arrayPares
+//     let arrayPares = array.filter((validaPar) => {
+//         return validaPar % 2 === 0
+//     })
+//     return arrayPares
 // }
-//     retornaNumerosPares[1,2,3,4,5,6,7,8]
+// retornaNumerosPares[1, 2, 3, 4, 5, 6, 7, 8]
 
 // //EXERCÍCIO 05
 // function retornaNumerosParesElevadosADois(array) {
 //     let arrayPares = array.filter((validaPar) => {
-//     return (validaPar %2 === 0)
-//      })
-    
-//       let arrayParesAoQuadrado = arrayPares.map((numeros) => {
-//             return (Math.pow(numeros,2))
-//       })
-//       return arrayParesAoQuadrado
-//     }
-//      retornaNumerosParesElevadosADois[1,2,3,4,5,6]    
+//         return (validaPar % 2 === 0)
+//     })
+
+//     let arrayParesAoQuadrado = arrayPares.map((numeros) => {
+//         return (Math.pow(numeros, 2))
+//     })
+//     return arrayParesAoQuadrado
+// }
+// retornaNumerosParesElevadosADois[1, 2, 3, 4, 5, 6]
 
 
 // //EXERCÍCIO 06
 // function retornaMaiorNumero(array) {
 //     let maiorNumero = -Infinity
-//     for( let i=0; i < array.length ; i++ ) {
+//     for (let i = 0; i < array.length; i++) {
 //         if (array[i] > maiorNumero) {
 //             maiorNumero = array[i]
 //         }
-        
+
 //     }
 //     return maiorNumero
 // }
-// retornaMaiorNumero[1,2,3,4,5,6,7]
+// retornaMaiorNumero[1, 2, 3, 4, 5, 6, 7]
 
 // // EXERCÍCIO 07
 // function retornaObjetoEntreDoisNumeros(num1, num2) {
-//   let atributo1
-//   let atributo2
-//   let atributo3
-//    if (num1 < num2) {
-//             atributo1 = num2
-//             atributo2 = (num2 % num1 === 0)
-//             atributo3 = (num2 - num1)
-//    } else {
-//             atributo1 = num1
-//             atributo2 = (num1 % num2 === 0)
-//             atributo3 = (num1 - num2)
-//             }
+//     let atributo1
+//     let atributo2
+//     let atributo3
+//     if (num1 < num2) {
+//         atributo1 = num2
+//         atributo2 = (num2 % num1 === 0)
+//         atributo3 = (num2 - num1)
+//     } else {
+//         atributo1 = num1
+//         atributo2 = (num1 % num2 === 0)
+//         atributo3 = (num1 - num2)
+//     }
 //     let objeto = {
 //         maiorNumero: atributo1,
 //         maiorDivisivelPorMenor: atributo2,
 //         diferenca: atributo3
 //     }
-// return objeto
+//     return objeto
 // }
-// retornaObjetoEntreDoisNumeros[15,30]
+// retornaObjetoEntreDoisNumeros[15, 30]
 
 // EXERCÍCIO 08
 // function retornaNPrimeirosPares(n) {
 //     let arrayPares = []
-//     for (let i=0; i<n;i++){
-//        let numeros = i*2
-//        arrayPares.push(numeros)
-//    }
-//     return arrayPares   
+//     for (let i = 0; i < n; i++) {
+//         let numeros = i * 2
+//         arrayPares.push(numeros)
+//     }
+//     return arrayPares
 // }
 // retornaNPrimeirosPares(3)
 
 // EXERCÍCIO 09
 // function classificaTriangulo(ladoA, ladoB, ladoC) {
 //     let tipoTriangulo
-//     if (ladoA === ladoB && ladoB === ladoC && ladoC === ladoA){
+//     if (ladoA === ladoB && ladoB === ladoC && ladoC === ladoA) {
 //         tipoTriangulo = "Equilátero"
-//     } else if 
-//         (ladoA !== ladoB && ladoB !== ladoC && ladoC !== ladoA){
-//             tipoTriangulo = "Escaleno"
+//     } else if
+//         (ladoA !== ladoB && ladoB !== ladoC && ladoC !== ladoA) {
+//         tipoTriangulo = "Escaleno"
 //     } else {
 //         (ladoA === ladoB || ladoB === ladoC && ladoC !== ladoA)
 //         tipoTriangulo = "Isósceles"
 //     }
-//   return tipoTriangulo  
+//     return tipoTriangulo
 // }
 
 // // EXERCÍCIO 10
 // function retornaSegundoMaiorESegundoMenor(array) {
-//    function ordenar (a,b) {
-//     return (a -b)
+//     function ordenar(a, b) {
+//         return (a - b)
 //     }
 //     array.sort(ordenar)
-//     segundoMaior = array[array.length-2]
+//     segundoMaior = array[array.length - 2]
 //     segundoMenor = array[1]
-//     return [segundoMaior,segundoMenor]
-//        }
-       
+//     return [segundoMaior, segundoMenor]
+// }
 
-// EXERCÍCIO 11
-function retornaChamadaDeFilme(filme) {
-   return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
-}
 
-// EXERCÍCIO 12
-function retornaPessoaAnonimizada(pessoa) {
-   
-}
+// // EXERCÍCIO 11
+// function retornaChamadaDeFilme(filme) {
+//     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
+// }
 
-// EXERCÍCIO 13A
-function retornaPessoasAutorizadas(pessoas) {
-   
-}
+// // EXERCÍCIO 12
+// function retornaPessoaAnonimizada(pessoa) {
+//     let objeto = {
+//         nome: pessoa.nome,
+//         idade: pessoa.idade,
+//         email: pessoa.email,
+//         endereco: pessoa.endereco
 
-// EXERCÍCIO 13B
-function retornaPessoasNaoAutorizadas(pessoas) {
-  
-}
+//     }
+//     let novoObjeto = { ...objeto, nome: "ANÔNIMO" }
+//     return novoObjeto
+// }
+
+
+// // EXERCÍCIO 13A
+// function retornaPessoasAutorizadas(pessoas) {
+//     const pessoasAutorizadas = pessoas.filter((iten, index, array) => {
+//         return iten.altura >= 1.5 && iten.idade > 14 && iten.idade < 60
+//     })
+//     return pessoasAutorizadas
+// }
+
+// // EXERCÍCIO 13B
+// function retornaPessoasNaoAutorizadas(pessoas) {
+//     const pessoasNaoAutorizadas = pessoas.filter((iten, index, array) => {
+//         return iten.altura < 1.5 || iten.idade <= 14 || iten.idade > 60
+//     })
+//     return pessoasNaoAutorizadas
+// }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+  let saldoConta = contas.map((soma) => {
+    let calculaSaldo = 0
+    calculaSaldo = (soma.saldoTotal + soma.compras)
+    return { ...soma, saldoTotal: calculaSaldo }
+  })
+  console.log(saldoConta)
 }
+
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+  consultas.sort(function (a, b) {
+    return (a.nome > b.nome) ? 1 : ((b.nome > a.nome) ? -1 : 0)
+  })
+  return consultas
 }
+
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+
 }
