@@ -8,16 +8,14 @@
 //     let tamanhoDaLista = array.length
 //     return tamanhoDaLista
 // }
-// retornaTamanhoArray[3, 2, 1, 4, 7]
-
 
 // // EXERCÍCIO 02
-function retornaArrayInvertido(array) {
-      let arrayInvertido = array.reverse()
-      return arrayInvertido
-  }
-  // retornaArrayInvertido[0, 8, 23, 16, 10, 15, 41, 12, 13]
-  // /////////  DESAFIO///////////
+// function retornaArrayInvertido(array) {
+//   let arrayInvertido = array.reverse()
+//   return arrayInvertido
+// }
+
+// /////////  DESAFIO///////////
 //   let arrayInvertido = []
 //   for (let i = -1; i < array.length; i++) {
 //     arrayInvertido.push(array.length)
@@ -26,13 +24,13 @@ function retornaArrayInvertido(array) {
 //   }
 // }
 
-// // EXERCÍCIO 03
-// function retornaArrayOrdenado(array) {
-//   let arrayOrdenado = array.sort(function(a,b) {
-//         return a -b
-//     })
-//     return arrayOrdenado
-//       }
+// EXERCÍCIO 03
+function retornaArrayOrdenado(array) {
+  let arrayOrdenado = array.sort(function(a,b) {
+        return a -b
+    })
+    return arrayOrdenado
+      }
 // retornaArrayOrdenado[36,12,56,7,3]]
 // /////////// TEM DESAFIO///////////
 
