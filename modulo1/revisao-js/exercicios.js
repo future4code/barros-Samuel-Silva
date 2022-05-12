@@ -87,16 +87,15 @@
 //     return objeto
 // }
 
-// EXERCÍCIO 08
-// function retornaNPrimeirosPares(n) {
-//     let arrayPares = []
-//     for (let i = 0; i < n; i++) {
-//         let numeros = i * 2
-//         arrayPares.push(numeros)
-//     }
-//     return arrayPares
-// }
-// retornaNPrimeirosPares(3)
+//EXERCÍCIO 08
+function retornaNPrimeirosPares(n) {
+    let arrayPares = []
+    for (let i = 0; i < n; i++) {
+        let numeros = i * 2
+        arrayPares.push(numeros)
+    }
+    return arrayPares
+}
 
 // EXERCÍCIO 09
 // function classificaTriangulo(ladoA, ladoB, ladoC) {
