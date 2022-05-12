@@ -25,13 +25,13 @@
 // }
 
 // EXERCÍCIO 03
-function retornaArrayOrdenado(array) {
-  let arrayOrdenado = array.sort(function(a,b) {
-        return a -b
-    })
-    return arrayOrdenado
-      }
-// retornaArrayOrdenado[36,12,56,7,3]]
+// function retornaArrayOrdenado(array) {
+//   let arrayOrdenado = array.sort(function(a,b) {
+//         return a -b
+//     })
+//     return arrayOrdenado
+//       }
+
 // /////////// TEM DESAFIO///////////
 
 // //EXERCÍCIO 04
@@ -41,7 +41,6 @@ function retornaArrayOrdenado(array) {
 //     })
 //     return arrayPares
 // }
-// retornaNumerosPares[1, 2, 3, 4, 5, 6, 7, 8]
 
 // //EXERCÍCIO 05
 // function retornaNumerosParesElevadosADois(array) {
@@ -54,8 +53,6 @@ function retornaArrayOrdenado(array) {
 //     })
 //     return arrayParesAoQuadrado
 // }
-// retornaNumerosParesElevadosADois[1, 2, 3, 4, 5, 6]
-
 
 // //EXERCÍCIO 06
 // function retornaMaiorNumero(array) {
@@ -64,11 +61,9 @@ function retornaArrayOrdenado(array) {
 //         if (array[i] > maiorNumero) {
 //             maiorNumero = array[i]
 //         }
-
 //     }
 //     return maiorNumero
 // }
-// retornaMaiorNumero[1, 2, 3, 4, 5, 6, 7]
 
 // // EXERCÍCIO 07
 // function retornaObjetoEntreDoisNumeros(num1, num2) {
@@ -91,7 +86,6 @@ function retornaArrayOrdenado(array) {
 //     }
 //     return objeto
 // }
-// retornaObjetoEntreDoisNumeros[15, 30]
 
 // EXERCÍCIO 08
 // function retornaNPrimeirosPares(n) {
