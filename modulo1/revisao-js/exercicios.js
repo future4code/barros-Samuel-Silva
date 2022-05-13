@@ -156,26 +156,23 @@
 //   return pessoasNaoAutorizadas
 // }
 
-// EXERCÍCIO 14
-function retornaContasComSaldoAtualizado(contas) {
-  // Soma compras e cria um array com os totais
-  let saldo = contas.map((item) => {
-    return item.compras.reduce((valor1, valor2) => {
-      return valor1 + valor2
-    }, 0)
-  })
-  //subtrai o saldo do total de compras
-  for (let i = 0; i < contas.length; i++) {
-    contas[i].saldoTotal -= saldo[i]
-    contas[i].compras = []
-  }
-  return contas
-}
-
-
-
+// // EXERCÍCIO 14
+// function retornaContasComSaldoAtualizado(contas) {
+//   // Soma compras e cria um array com os totais
+//   let saldo = contas.map((item) => {
+//     return item.compras.reduce((valor1, valor2) => {
+//       return valor1 + valor2
+//     }, 0)
+//   })
+//   //subtrai o saldo do total de compras
+//   for (let i = 0; i < contas.length; i++) {
+//     contas[i].saldoTotal -= saldo[i]
+//     contas[i].compras = []
+//   }
+//   return contas
 // }
 
+// }
 // // EXERCÍCIO 15A
 // function retornaArrayOrdenadoAlfabeticamente(consultas) {
 //   consultas.sort(function (a, b) {
@@ -184,11 +181,10 @@ function retornaContasComSaldoAtualizado(contas) {
 //   return consultas
 // }
 
-
 // // EXERCÍCIO 15B
 // function retornaArrayOrdenadoPorData(consultas) {
-//   for (let i = 0; i < consultas.length; i++) {
-//     consultas.dataDaConsulta[i].slpit("/")
+//   for (let i = 0; i < 3; i++) {
+//     consultas.sort((a,b) => a.dataDaConsulta.split('/')[i] > b.dataDaConsulta.split('/')[i]? 1 : a.dataDaConsulta.split('/'))
 //   }
-//   console.log(consultas[0].dataDaConsulta[0])
+//   return consultas
 // }
