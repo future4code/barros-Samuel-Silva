@@ -88,16 +88,16 @@
 // }
 
 //EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {
-    let arrayPares = []
-    for (let i = 0; i < n; i++) {
-        let numeros = i * 2
-        arrayPares.push(numeros)
-    }
-    return arrayPares
-}
+// function retornaNPrimeirosPares(n) {
+//     let arrayPares = []
+//     for (let i = 0; i < n; i++) {
+//         let numeros = i * 2
+//         arrayPares.push(numeros)
+//     }
+//     return arrayPares
+// }
 
-// EXERCÍCIO 09
+//EXERCÍCIO 09
 // function classificaTriangulo(ladoA, ladoB, ladoC) {
 //     let tipoTriangulo
 //     if (ladoA === ladoB && ladoB === ladoC && ladoC === ladoA) {
@@ -123,7 +123,6 @@ function retornaNPrimeirosPares(n) {
 //     return [segundoMaior, segundoMenor]
 // }
 
-
 // // EXERCÍCIO 11
 // function retornaChamadaDeFilme(filme) {
 //     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
@@ -131,55 +130,65 @@ function retornaNPrimeirosPares(n) {
 
 // // EXERCÍCIO 12
 // function retornaPessoaAnonimizada(pessoa) {
-//     let objeto = {
-//         nome: pessoa.nome,
-//         idade: pessoa.idade,
-//         email: pessoa.email,
-//         endereco: pessoa.endereco
-
-//     }
-//     let novoObjeto = { ...objeto, nome: "ANÔNIMO" }
-//     return novoObjeto
+//   let objeto = {
+//     nome: pessoa.nome,
+//     idade: pessoa.idade,
+//     email: pessoa.email,
+//     endereco: pessoa.endereco
+//   }
+//   let novoObjeto = { ...objeto, nome: "ANÔNIMO" }
+//   return novoObjeto
 // }
-
 
 // // EXERCÍCIO 13A
 // function retornaPessoasAutorizadas(pessoas) {
-//     const pessoasAutorizadas = pessoas.filter((iten, index, array) => {
-//         return iten.altura >= 1.5 && iten.idade > 14 && iten.idade < 60
-//     })
-//     return pessoasAutorizadas
+//   const pessoasAutorizadas = pessoas.filter((iten, index, array) => {
+//     return iten.altura >= 1.5 && iten.idade > 14 && iten.idade < 60
+//   })
+//   return pessoasAutorizadas
 // }
 
 // // EXERCÍCIO 13B
 // function retornaPessoasNaoAutorizadas(pessoas) {
-//     const pessoasNaoAutorizadas = pessoas.filter((iten, index, array) => {
-//         return iten.altura < 1.5 || iten.idade <= 14 || iten.idade > 60
-//     })
-//     return pessoasNaoAutorizadas
+//   const pessoasNaoAutorizadas = pessoas.filter((iten, index, array) => {
+//     return iten.altura < 1.5 || iten.idade <= 14 || iten.idade > 60
+//   })
+//   return pessoasNaoAutorizadas
 // }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-  let saldoConta = contas.map((soma) => {
-    let calculaSaldo = 0
-    calculaSaldo = (soma.saldoTotal + soma.compras)
-    return { ...soma, saldoTotal: calculaSaldo }
+  // Soma compras e cria um array com os totais
+  let saldo = contas.map((item) => {
+    return item.compras.reduce((valor1, valor2) => {
+      return valor1 + valor2
+    }, 0)
   })
-  console.log(saldoConta)
+  //subtrai o saldo do total de compras
+  for (let i = 0; i < contas.length; i++) {
+    contas[i].saldoTotal -= saldo[i]
+    contas[i].compras = []
+  }
+  return contas
 }
 
 
-// EXERCÍCIO 15A
-function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  consultas.sort(function (a, b) {
-    return (a.nome > b.nome) ? 1 : ((b.nome > a.nome) ? -1 : 0)
-  })
-  return consultas
-}
+
+// }
+
+// // EXERCÍCIO 15A
+// function retornaArrayOrdenadoAlfabeticamente(consultas) {
+//   consultas.sort(function (a, b) {
+//     return (a.nome > b.nome) ? 1 : ((b.nome > a.nome) ? -1 : 0)
+//   })
+//   return consultas
+// }
 
 
-// EXERCÍCIO 15B
-function retornaArrayOrdenadoPorData(consultas) {
-
-}
+// // EXERCÍCIO 15B
+// function retornaArrayOrdenadoPorData(consultas) {
+//   for (let i = 0; i < consultas.length; i++) {
+//     consultas.dataDaConsulta[i].slpit("/")
+//   }
+//   console.log(consultas[0].dataDaConsulta[0])
+// }
