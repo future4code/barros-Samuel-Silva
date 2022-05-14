@@ -106,4 +106,4 @@
    alert('O jogo acabou! Obrigado!') 
    }
  
-   
+
