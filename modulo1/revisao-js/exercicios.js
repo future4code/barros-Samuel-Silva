@@ -16,23 +16,35 @@
 // }
 
 // /////////  DESAFIO///////////
-//   let arrayInvertido = []
-//   for (let i = -1; i < array.length; i++) {
-//     arrayInvertido.push(array.length)
-//     console.log(arrayInvertido)
-//     //return arrayPop
-//   }
+// function retornaArrayInvertido(array) {
+//     let arrayInvertido = []
+//     for (let i = array.length - 1; i >= 0; i--) {
+//         arrayInvertido.push(array[i])
+//     }
+//     return arrayInvertido
 // }
 
 // EXERCÍCIO 03
 // function retornaArrayOrdenado(array) {
-//   let arrayOrdenado = array.sort(function(a,b) {
-//         return a -b
+//     let arrayOrdenado = array.sort(function (a, b) {
+//         return a - b
 //     })
 //     return arrayOrdenado
-//       }
+// }
 
 // /////////// TEM DESAFIO///////////
+// function retornaArrayOrdenado(array) {
+//     let arrayOrdenado = []
+//     let arrayInvertido = []
+//     for (let i = array.length - 1; i >= 0; i--) {
+//         arrayInvertido.push(array[i])
+//         arrayOrdenado = array.sort(function (a, b) {
+//             return a - b
+//         })
+
+//     }
+//     return arrayOrdenado
+// }
 
 // //EXERCÍCIO 04
 // function retornaNumerosPares(array) {
