@@ -16,6 +16,7 @@
     let carta2 = comprarCarta()
     let carta3 = comprarCarta()
     let pontosUsuario = [carta1.valor + carta2.valor]
+
     let pontosComput =  carta3.valor + carta4.valor
     let cartasUsuario = [carta1.texto,carta2.texto]
     let cartasComput = [carta3.texto,carta4.texto]
@@ -62,4 +63,4 @@
          }
    
       console.log('O jogo acabou!')
-            
+  
