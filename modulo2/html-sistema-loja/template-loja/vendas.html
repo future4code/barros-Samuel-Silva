@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Histórico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Página Inicial</a>
+        <a href="ctrl-estoque.html">Controle de Estoque</a>
+        <a href="add-produto.html">Adicionar Produto</a>
+        <a href="funcionarios.html">Funcionários</a>
+        <a href="vendas.html">Vendas</a>
+    </nav>
+
+    <header>
+        <h1>ArtBeer</h1>
+    </reader>
+    
+    <h2>Vendas</h2>
+    <form action="">
+        <div class="custom-select" style="width:200px;">
+            <select>
+              <option value="0">ESCOLHA O PRODUTO:</option>
+              <option value="1">Cerveja Baden Baden</option>
+              <option value="2">Cerveja Loba</option>
+              <option value="3">Cerveja Mar d Morros</option>
+              <option value="4">Cerveja Off</option>
+              <option value="5">Cerveja Verena</option>
+            </select>
+          </div>
+            <br>
+            <label for="preco">Preço (em R$): </label>
+            <!-- Adicione o id apropriado e o type para receber números abaixo -->
+            <input type="number" id="preco" name="preço">
+            <br>
+            <br>
+            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+            <label for="quantidade"> Quantidade: </label>
+            <input type="number" id="quantidade" name="quantidade">
+            <br>
+            <br>
+            <label for="pagamento"> Pagamento: </label>
+            <label class="container">Cartão
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">Dinheiro
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            </label>
+            <br>
+            <br>
+            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+            <button type="submit">Fechar compra</button>
+
+    </form>
+    <footer>
+        <p>Siga-nos nas redes sociais!</p>
+        <img src="../img/face.png"/><a href="https://www.facebook.com">Facebook</a>
+        <img src="../img/insta.jpg"/><a href="https://www.instagram.com">Instagram</a>
+        <img src="../img/zap.jpg"/><a href="https://www.whatsapp.com">Whatsapp</a>
+    </footer>
+</body>
+</html>

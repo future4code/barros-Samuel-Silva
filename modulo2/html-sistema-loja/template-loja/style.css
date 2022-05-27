@@ -1,0 +1,116 @@
+body{
+    background-color: rgba(235, 202, 160, 0.418);
+    background-image: url(/img/fundotela.jpg);
+    background-size:cover;
+}
+
+header {
+    border: #333;
+   
+}
+main img {
+    margin-left: 200px;
+}
+
+.link-interno {
+    font-size: x-large;
+    color: darkorange;
+}
+
+nav a {
+    color: rgb(158, 149, 149);
+    font-style: italic;
+    font-weight: 800;
+    font-size: larger;
+    margin-right: 20px;
+    
+}
+   
+p {
+    color: antiquewhite;
+    font-style: italic;
+    font-weight: 800;
+    font-size:x-large;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-right: 900px;
+    padding-left: 100px;
+}
+
+h1{
+    font-size:xx-large;
+    color: antiquewhite;
+}
+
+h2{
+    font-size: larger;
+    color: darkorange;
+}
+
+footer {
+    bottom: 0;
+    left: 10px;
+    height: 110px;
+    position: fixed;
+    
+}
+footer a {
+    color: antiquewhite;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table{
+    color: antiquewhite;
+    font-size: large;
+    background-color: rgb(41, 38, 38);
+    margin-left: 50px;
+    display: inline-block;
+}
+
+th {
+    font-weight: bold;
+}
+
+td a {
+    color: darkorange;
+}
+
+label {
+    color: antiquewhite;
+    font-size: xx-large;
+}
+
+form {
+    margin-top: 50px;
+    font-size:xx-large ;
+}
+
+ol li {
+    font-size: x-large;
+    margin-right: 10px;
+    background-color: rgb(41, 38, 38);
+    color: antiquewhite;
+    display: inline;
+
+}
+button {
+    font-size: x-large;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  .custom-select {
+    position: relative;
+    font-family: Arial;
+    font-size: xx-large;
+  }
+
+ 
