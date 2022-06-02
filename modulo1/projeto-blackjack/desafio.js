@@ -16,94 +16,51 @@
     let carta2 = comprarCarta()
     let carta3 = comprarCarta()
     let pontosUsuario = [carta1.valor + carta2.valor]
-    let pontosComput = [carta3.valor + carta4.valor]
+
+    let pontosComput =  carta3.valor + carta4.valor
     let cartasUsuario = [carta1.texto,carta2.texto]
     let cartasComput = [carta3.texto,carta4.texto]
-    let somaCartasUsuario = 0
-    let somaCartasComput = 0
+    let novaCarta = []
 
 
-   // Abertura do jogo --------------------------------------------------------------------------------------------------- Mostra mensagem de abertura (OK!)
-      
-      if(confirm("♣️ ♥️ ♠️ ♦️  BOAS VINDAS AO JOGO DE BLACKJACK! ♦️ ♠️ ♥️ ♣️     Deseja inciar uma nova rodada? ")) {
+   // Abertura do jogo ---------------------------------------------------------------------------------------------------
+      console.log('♣️ ♥️ ♠️ ♦️   BOAS VINDAS AO JOGO DE BLACKJACK!  ♣️ ♥️ ♠️ ♦️')
+      if(confirm("Deseja inciar uma nova rodada?")) {
       comprarCarta() 
-      }
-   // Teste do 2 Ases ----------------------------------------------------------------------------------------------------- Não mostra ao usuário quando for 2 A (OK!)
+   
+   // Teste do 2 Ases -----------------------------------------------------------------------------------------------------
          if (pontosUsuario !== 22 && pontosComput !== 22) {
-         jogadaUsuario()
+         iniciaJogo()
       }  else {
-         alert('Dois Ases sorteados, reiniciando rodada...')  
+         console.log('Dois Ases sorteados, reiniciando rodada')  
          comprarCarta()
          }
    
-   // // Inicio da rodada . Comprar mais cartas ----------------------------------------------------------------------------  Se der ok oferece comprar carta (OK!)
-            
-         function jogadaUsuario () {              
-            if (somaCartasUsuario < 21) {
-               if(confirm("SUA JOGADA:   Suas cartas são: " + cartasUsuario  + ".  A carta revelada do computador é " + carta3.texto +
-                          "\n"+  // \n faz pular a linha
-                          "DESEJA COMPRAR MAIS UMA CARTA?")){  //  --------------------------------------------------------------------   Se cancelar vai para o reultado (OK!)
-               novaCarta1 = comprarCarta()
-               cartasUsuario.push(novaCarta1.texto)
-               somaCartasUsuario += novaCarta1.valor
-               for (let i=0; i<pontosUsuario.length;i++){
-               somaCartasUsuario += pontosUsuario[i]
-                  if (somaCartasUsuario > 21) {
-                     resultado()
-                  }else {
-               confirm(`Suas cartas são ${cartasUsuario} /// ${somaCartasUsuario} pontos.\n` +
-                   `As cartas do computador são ${cartasComput} /// ${pontosComput} pontos.\n `)
-                  }
-                 }
-               } else {
-                  jogadaComput()
-               }
+   // // Inicio da rodada . Comprar mais cartas ----------------------------------------------------------------------------  
+            function iniciaJogo ()
+            let pontosUsuarioMaisCompra = (pontosUsuario+novaCarta.valor)                        
+            while (pontosUsuarioMaisCompra < 22) {
+               if(confirm("Suas cartas são: " + cartasUsuario  + ". A carta revelada do computador é " + carta3.texto +
+                    "\n"+  // \n faz pular a linha
+                    "Deseja comprar mais uma carta?")) {
+            novaCarta = comprarCarta()
+            cartasUsuario.push(novaCarta.texto)  
+            pontosUsuarioMaisCompra = pontosUsuario + novaCarta.valor
             }
+            console.log(`Carta comprada: ` + novaCarta.texto)
+            console.log(`Suas cartas:` + cartasUsuario + `/// Pontuação: ${pontosUsuarioMaisCompra}`)
+            console.log(`Cartas do computador: ${carta3.texto} ${carta4.texto} /// Pontuação: ${pontosComput}`)
+         }             
+         }  else if             
+            (pontosComput === pontosUsuario){
+            console.log("Empate")
+         }  else if
+            (pontosComput > pontosUsuario){
+            console.log("O computador ganhou!")
+         }  else if
+            (pontosComput < pontosUsuario){
+            console.log("Você ganhou!!!")
          }
-         function jogadaComput () {              
-            if (pontosComput < 21) {
-               if(confirm("JOGADA DO COMPUTADOR: Suas cartas são: " + cartasUsuario  + ". A cartas do computador são " + cartasComput +
-                           "\n"+  // \n faz pular a linha
-                           "Deseja comprar mais uma carta?")){  //  --------------------------------------------------------------------   Se cancelar vai para o reultado (OK!)
-               novaCarta2 = comprarCarta()
-               cartasComput.push(novaCarta2.texto)
-               somaCartasComput += novaCarta2.valor
-               for (let i=0; i<pontosComput.length;i++){
-               somaCartasComput += pontosComput[i]
-               confirm(`Suas cartas do computador ${cartasComput}  ${somaCartasComput} pontos.\n`+
-                       `As cartas do usuário são ${cartasUsuario}  ${somaCartasUsuario}.\n` )
-                  }
-               }else {
-               resultado()
-               } 
-            }
-         }  
-             function resultado(){
-             if (pontosComput > somaCartasUsuario || somaCartasUsuario > 21) {
-               alert(
-                  `Suas cartas são ${cartasUsuario} . Sua pontuação é ${somaCartasUsuario}.\n` +
-                  `As cartas do computador são ${cartasComput} . A pontuação do computador é ${pontosComput}.\n` +
-                  "O computador ganhou!")
-                  fimDeJogo()
-
-             } else if (pontosComput < somaCartasUsuario || pontosComput > 22) {
-               alert(
-                  `Suas cartas são ${cartasUsuario} . Sua pontuação é ${somaCartasUsuario}.\n` +
-                  `As cartas do computador são ${cartasComput} . A pontuação do computador é ${pontosComput}.\n` +
-                  "PARABÉNS! VOCÊ GANHOU!")
-                  fimDeJogo()
-             } else if (pontosComput === somaCartasUsuario) {
-               alert(
-                 `Suas cartas são ${cartasUsuario} . Sua pontuação é ${somaCartasUsuario}.\n` +
-                 `As cartas do computador são ${cartasComput} . A pontuação do computador é ${pontosComput}.\n` +
-                 "EMPATE!")
-                 fimDeJogo()
-                  }
-               }
-                                
-      resultado() 
-   function fimDeJogo () {
-   alert('O jogo acabou! Obrigado!') 
-   }
- 
-
+   
+      console.log('O jogo acabou!')
+  
