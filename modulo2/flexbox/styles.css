@@ -1,0 +1,22 @@
+.botao-nav {
+    display: flex;
+    background-color:rgb(235, 207, 223);
+    align-items: center;
+    width: 300px;
+}  
+    
+
+.icone-e-texto {
+    display: flex;
+    width: 300px;
+    align-items: center;
+   
+}
+
+.icone {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    padding:10px;
+    
+}
