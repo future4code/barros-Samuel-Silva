@@ -20,7 +20,7 @@ footer{
     display: grid;
     background-color: rgba(20, 24, 34, 0.884);
     color: aliceblue;
-    border-bottom: solid 2px orange;
+    border-bottom: solid 3px rgb(247, 140, 18);
     padding-left: 10px;
     font-size: x-large;
     
@@ -58,7 +58,20 @@ img{
     margin-bottom: 30px;
 }
 
-
 span{
     padding: 10px;
+}
+
+video{
+    height: 700px;
+    border: solid 5px green;
+  
+}
+
+.voltar{
+    display: grid;
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(247, 140, 18);
 }
