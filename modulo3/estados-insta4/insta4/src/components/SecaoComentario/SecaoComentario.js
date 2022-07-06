@@ -1,7 +1,6 @@
 import React from 'react'
 import './style.css'
 
-
 export function SecaoComentario(props) {
 	return (
 		<div className='CommentContainer'>
