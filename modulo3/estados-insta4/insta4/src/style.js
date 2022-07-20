@@ -5,6 +5,8 @@ export const MainContainer = styled.div`
     justify-content:center;
     flex-direction:column;
     align-items:center;
+
+    box-shadow: 0.5vw 0.1vw 0.5vw;
    `
 export const DivContainer = styled.div`
     display: flex;
@@ -32,5 +34,4 @@ export const MyForm=styled.form`
     button{
         margin: 0.5vw;
         width: 5vw;
-    }
 `
