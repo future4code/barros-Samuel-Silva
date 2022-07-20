@@ -1,0 +1,22 @@
+****FILTROS
+
+- Valor mínio e Valor Máximo - Percorre o array mostrando os elementos da condição do input (on Change, filter)
+- Busca por nome - Percorre o array mostrando os elementos da condição do input (on Change, indexOf)
+
+**** DIV PRODUTOS
+
+- Exibe os elementos do array com suas prorpriedades como um card
+	- Quantidade de produtos - Conta os elementos do array (lenght)
+	- Botão Adicionar ao carrinho - adiciona o elemento atual no array "carrinho" (push)
+
+****ORDENAÇÃO
+
+- Ordena o array "listaDeProdutos" em ordem crescente/decresvente (slice(0))
+
+
+****CARRINHO
+
+- Lista de produtos escolhidos - array - alterável (map)
+- Botão Remover - button que chama uma função que remove elemento atual do array (pop)
+- Valor Total - função que soma a proprieda "price" dos elementos do array "carrinho" (+ produto.price)
+
