@@ -78,16 +78,15 @@ function Choose({ mudaPagina }) {
         <button onClick={handleSubmit}>♥ View Matches</button>
       </Header>
       <CardPost>
-        <h2>Escolha seu par...</h2>
         <img src={perfil.photo}></img>
         <h3>{perfil.name}, {perfil.age}</h3>
         <p>{perfil.bio}</p>
       </CardPost>
+        
       <Footer>
         <img src={iconNoMatch} onClick={ChoosePersonNo} alt="Icone descatar match"></img>
         <img src={iconMatch} onClick={ChoosePersonYes} alt="Icone dar match"></img>
         <img src={iconLimpar} onClick={ChoosePersonYes} alt="Icone limpar matches"></img>
-        
       </Footer>
     </>
   )

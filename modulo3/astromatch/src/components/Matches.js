@@ -21,8 +21,7 @@ function Matches({ mudaPagina }) {
 
 //////////////////////////////////////////////AXIOS/////////////////////////////////////////////
 
-const url ="https://us-central1-missao-newton.cloudfunctions.net/astroMatch/samuel-garcia-barros/matches";
-  
+
 const headers = {headers: {
     "Content-Type" : "application/json"
   }
@@ -32,7 +31,7 @@ const headers = {headers: {
 
 const getMatches = () => {
     axios
-      .get(url)
+      .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/samuel-garcia-barros/matches")
       .then((response) => {
         console.log(response.data.matches);
         setListaMatches(response.data.matches)
@@ -53,31 +52,32 @@ const getMatches = () => {
     )
 })
 
-//////////////////////////////////////////LIMPA MATCHES//////////////////////////////////////////////////////
+// //////////////////////////////////////////LIMPA MATCHES//////////////////////////////////////////////////////
 
 
 const clearMatches = () => {
-      axios.put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/samuel-garcia-barros}/clear`)
-      .then(() => {
+      axios.put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/samuel-garcia-barros/clear`)
+      .then((response) => {
         alert("Matches descartados!")
         setListaMatches([])
-    }).catch(() =>{
+    }).catch((error) =>{
         alert("Ops! Algo deu errado.")
     })
 }
 
+
   return (
     <>
-    <Header>
+      <Header>
         <img src={Logo}></img>
         <button onClick={handleSubmit}>♥ Search More</button>  
-    </Header>
+      </Header>
       <TelaMatches>
         {lista}
-    </TelaMatches>  
-    <Footer>
+      </TelaMatches>  
+      <Footer>
         <img src={iconLimpar} onClick={clearMatches} alt="Icone limpar matches"></img>
-    </Footer>
+      </Footer>
     </>
   )
 }

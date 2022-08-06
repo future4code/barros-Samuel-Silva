@@ -3,7 +3,7 @@ import { Container } from "./style";
 import Choose from "./components/Choose";
 import Matches from "./components/Matches";
 
-function App() {
+function App(props) {
 
 /////////////////////////////////////////////MUDA PAGINA/////////////////////////////////////////////
 
@@ -19,6 +19,10 @@ const paginaRenderizada = () => {
       return <Choose mudaPagina={mudaPagina}/>
   }
 }
+
+//////////////////////////////////////////LIMPA MATCHES//////////////////////////////////////////////////////
+
+
 
 function mudaPagina(p){
   setPagina(p)
