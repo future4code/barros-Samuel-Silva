@@ -9,8 +9,8 @@ const HomePage = () => {
 
     const navigate = useNavigate();
 
-    const goToAdmin = () => {
-        navigate("/Admin")
+    const goToLogin = () => {
+        navigate("/Login")
       }
     
     const goToList = () => {
@@ -21,7 +21,7 @@ const HomePage = () => {
         <StyleDiv>
             <img src={logo}></img>
             <h1>Labe X</h1>
-            <button onClick={goToAdmin}>Area do Administrador</button>
+            <button onClick={goToLogin}>Area do Administrador</button>
             <button onClick={goToList}>Ver Viagens</button>
         </StyleDiv>
     )
