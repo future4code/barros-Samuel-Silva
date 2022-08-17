@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { StyleFormDiv, StyleList } from "../style";
+import { StyleForm, StyleList } from "../style";
 import { GetTrip_URL } from '../constants/constants';
 import useRequestData from '../hooks/useRequestData';
 
@@ -26,14 +26,14 @@ const ListTripsPage = () => {
 
     const lista = dataListTrips&&dataListTrips.map((perfil) => {
       return (
-          <div>
+          <StyleList>
               <p>Nome:{perfil.name}</p>
               <p>Descrição:{perfil.description}</p>
               <p>Planeta:{perfil.planet}</p>
               <p>Duração em dias:{perfil.durationInDay}</p>
               <p>Data:{perfil.date}</p>
               <br/>
-          </div> 
+          </StyleList> 
 
           )
   })
@@ -44,20 +44,19 @@ const ListTripsPage = () => {
  ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 return (
-        <StyleFormDiv>
-          
-            <button onClick={goToLast}>Voltar</button>
-            <button onClick={goToForm}>Inscreva-se</button>
-            <h1>Lista de viagens</h1>
-              <StyleList>
+        <div>
+              <h1>Lista de viagens</h1>
+              <div>
               {isLoadingListTrips && "Carregando..."} 
               <ul>
                 {!isLoadingListTrips && dataListTrips && lista} 
               </ul>
               {!isLoadingListTrips && !dataListTrips && erroListTrips} 
-              </StyleList>
+              </div>
              {/* {!isLoadingListTrips && !dataListTrips && dataListTrips.length === 0 && <p>"Nenhuma viagem"</p>}  */}
-        </StyleFormDiv>
+             <button type="button" onClick={goToLast}>Voltar</button>
+             <button type="button" onClick={goToForm}>Inscreva-se</button>
+        </div>
         
     )
 }

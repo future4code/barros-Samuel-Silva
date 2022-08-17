@@ -102,29 +102,20 @@ console.log(Candidate)
  
 /////////////////////////////////////////////////////////////////////////////////////////
     return (
-      <StyleFormDiv>
-      
+        <div>
             <h1>Painel Administrativo</h1>
             <button onClick={goToLast}>Voltar</button>
             <button onClick={goToCreateTrip}>Criar Viagem</button>
             <button onClick={goToLogin}>Logout</button>
             <h1>Lista de viagens</h1>
-              <StyleList>
+            <StyleList>
               {isLoadingListTrips && "Carregando..."} 
               <ul>
                 {!isLoadingListTrips && dataListTrips && lista} 
               </ul>
               {!isLoadingListTrips && !dataListTrips && erroListTrips} 
-              </StyleList>
-              {/* <StyleList>
-              {isLoadingListCandi && "Carregando..."} 
-              <ul>
-                {!isLoadingListCandi && dataListCandi && Candidate} 
-              </ul>
-              {!isLoadingListCandi && !dataListCandi && erroListCandi} 
-              </StyleList> */}
-             {/* {!isLoadingListTrips && !dataListTrips && dataListTrips.length === 0 && <p>"Nenhuma viagem"</p>}  */}
-      </StyleFormDiv>
+            </StyleList>
+      </div>
               
     )
 }

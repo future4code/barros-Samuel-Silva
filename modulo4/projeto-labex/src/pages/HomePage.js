@@ -1,30 +1,33 @@
 import React, { useState } from "react";
 import styled from "styled-components"
-import axios from "axios";
+import background1 from "../img/fundo1.jpg"
 import { useNavigate } from "react-router-dom";
-import { StyleDiv } from "../style";
+import { Container, StyleDiv } from "../style";
 import logo from "../img/logo.jpg"
 
 const HomePage = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const goToLogin = () => {
-        navigate("/Login")
-      }
-    
-    const goToList = () => {
-        navigate("/Lista")
-      }
+  const goToLogin = () => {
+    navigate("/Login")
+  }
 
-    return (
-        <StyleDiv>
-            <img src={logo}></img>
-            <h1>Labe X</h1>
-            <button onClick={goToLogin}>Area do Administrador</button>
-            <button onClick={goToList}>Ver Viagens</button>
-        </StyleDiv>
-    )
+  const goToList = () => {
+    navigate("/Lista")
+  }
+
+  return (
+
+    <div>
+      <button onClick={goToLogin}>Area do Administrador</button>
+      <button onClick={goToList}>Ver Viagens</button>
+      <StyleDiv>
+        <img src={logo}></img>
+      </StyleDiv>
+      <h1>Aqui, o céu não é o limite!</h1>
+    </div>
+  )
 }
 
 export default HomePage;

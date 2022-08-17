@@ -1,14 +1,17 @@
 import styled from "styled-components";
 import background from "../src/img/fundo.jpg"
 
+
 export const Container=styled.div`
-   // background-image:url(${background});
-   // background-size: contain ;
-   // opacity: 0.8;
-    height: 100vh;
     text-align: center;
     padding: 1vw;
-    z-index: auto;
+    img{
+        position: relative;
+        height: cover;
+        width: cover;
+        
+    }
+    
 `
 export const StyleDiv=styled.div`
     display: flex;
@@ -19,20 +22,17 @@ export const StyleDiv=styled.div`
     width: 50vw;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px;
-  // background-color: whitesmoke;
-   // opacity: 0.5;
-    gap: 2vh;
+    margin-bottom: 2vh;
     justify-content: center;
-    margin: auto;
-    margin-top: 2vw;
     align-items: center;
+    color: #7A1E13;
     button{
         margin: 2vw;
         padding: 0.3vw;
     }
     input{
         width: 30vw;
-        background-color: antiquewhite;
+        background-color: #7c1c17;
         border-radius: 5px;
     }
 `
@@ -40,15 +40,14 @@ export const StyleForm=styled.form`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 50vh;
-    width: 50vw;
+    height: 70vh;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px;
     gap: 2vh;
     justify-content: center;
-    margin: auto;
     margin-top: 2vw;
     align-items: center;
+    color: #7A1E13;
     button{
         margin: 2vw;
         padding: 0.3vw;
@@ -57,14 +56,16 @@ export const StyleForm=styled.form`
         width: 30vw;
         background-color: whitesmoke;
         border-radius: 5px;
+        text-align: center;
     }
     select{
         width: 30vw;
         background-color: whitesmoke;
         border-radius: 5px;
+        text-align: center;
     }
 `
-export const StyleFormDiv=styled.div`
+export const StyleFormDiv=styled.div`  //Lista de Viagem, 
     flex-direction: column;
     height: 50vh;
     width: 50vw;
@@ -74,7 +75,7 @@ export const StyleFormDiv=styled.div`
     margin: auto;
     margin-top: 2vw;
     align-items: center;
-    
+    color: #7A1E13;
     button{
         margin: 2vw;
         padding: 0.3vw;
@@ -89,6 +90,7 @@ export const StyleFormDiv=styled.div`
         background-color: whitesmoke;
         border-radius: 5px;
     }
+    
 `
 export const StyleList=styled.ul`
     text-align: start;
@@ -97,34 +99,34 @@ export const StyleList=styled.ul`
     border-radius: 20px;
     margin-top: 2vh;
     box-shadow: 2px 2px 2px 2px;
-`
+    
+    `
 export const StyleFormLogin=styled.form`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 30vh;
-    width: 30vw;
+    height: 50vh;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px;
     gap: 2vh;
     justify-content: center;
-    margin: auto;
     margin-top: 2vw;
     align-items: center;
+    color: #7A1E13;
     button{
         margin: 2vw;
         padding: 0.3vw;
     }
     input{
-        width: 20vw;
+        width: 30vw;
         background-color: whitesmoke;
         border-radius: 5px;
-        margin: 1vw 0 1vw 0;
-        height: 3vh;
+        text-align: center;
     }
     select{
         width: 30vw;
         background-color: whitesmoke;
         border-radius: 5px;
+        text-align: center;
     }
 `
