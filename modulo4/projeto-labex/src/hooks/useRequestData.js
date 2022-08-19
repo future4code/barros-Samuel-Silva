@@ -6,20 +6,21 @@ const useRequestData = (url) => {  //url completa
     const [data, setData] = useState(undefined)  //undefined, pois não sei o que vai ser
     const [isLoading, setIsLoading] = useState(undefined)
     const [erro, setErro] = useState(undefined)
-    
+    const [page, setPage] = useState(undefined)
     useEffect(() => {
         setIsLoading(true);                 //carregando
-        axios.get(url).then(response =>{
-            setIsLoading(false);            // a requesição chega, não está mais carregando
+        axios.get(url)
+        .then(response =>{
+          setIsLoading(false);            // a requesição chega, não está mais carregando
           setData(response.data.trips)
         }).catch(error =>{
-            setIsLoading(false)             //deu erro, para de carregar
+          setIsLoading(false)             //deu erro, para de carregar
           setErro(error)                    //mensagem de erro
         })
       }, [])
 
     return (
-      [data, isLoading, erro]
+      [data, isLoading, erro, page, setPage]
     )
 }
 

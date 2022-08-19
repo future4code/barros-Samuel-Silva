@@ -1,19 +1,24 @@
 import React from "react";
-import { PostCreateTrip_URL } from "../constants/constants";
+import { BASE_URL } from "../constants/constants";
 import axios from "axios";
 import { useForm } from "../hooks/useForm"
 import { useNavigate } from "react-router-dom";
 import { StyleFormDiv, StyleForm } from "../style";
+import useProtectPage from "../hooks/useProtectPage";
+import * as MyRouters from "../Rotas/Coodinator";
 
 const CreateTripPage = () => {
 
     const [body,onChange,clear]=useForm({ email: "", password: ""})
 
+    useProtectPage()
+    const navigate = useNavigate();
+
     const createTrip = (event) => {
         event.preventDefault()
-        axios.post(`${PostCreateTrip_URL}`, body).
+        axios.post(`${BASE_URL}`, body).
         then((response)=>{
-            {goToList()};
+            {MyRouters.goToList()};
             console.log(response.data);
         }).catch((error)=>{
             console.log("deu erro")
@@ -21,16 +26,6 @@ const CreateTripPage = () => {
         clear();
         
     }
-    const navigate = useNavigate();
-
-    const goToLast = () => {
-        navigate(-1)
-    }
-
-    const goToList = () => {
-        navigate("/Lista")
-    }
-
 
     return (
         <StyleForm onSubmit={createTrip}>
@@ -95,7 +90,7 @@ const CreateTripPage = () => {
                        onChange={onChange}
                        pattern="[5-9]{1}[0-9]{1}"
                     />
-            <button type="button" onClick={goToLast}>Voltar</button>
+            <button type="button" onClick={()=>MyRouters.goToLast(navigate)}>Voltar</button>
             <button>Criar</button>
         </StyleForm>
     )

@@ -1,31 +1,21 @@
-import React, { useState } from "react";
-import styled from "styled-components"
-import background1 from "../img/fundo1.jpg"
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, StyleDiv } from "../style";
+import { StyleHome } from "../style";
 import logo from "../img/logo.jpg"
+import * as MyRouters from "../Rotas/Coodinator";
 
 const HomePage = () => {
 
   const navigate = useNavigate();
 
-  const goToLogin = () => {
-    navigate("/Login")
-  }
-
-  const goToList = () => {
-    navigate("/Lista")
-  }
-
   return (
-
     <div>
-      <button onClick={goToLogin}>Area do Administrador</button>
-      <button onClick={goToList}>Ver Viagens</button>
-      <StyleDiv>
-        <img src={logo}></img>
-      </StyleDiv>
+    <StyleHome>
+      <img src={logo} alt="Logo Labex"></img>
       <h1>Aqui, o céu não é o limite!</h1>
+    </StyleHome>
+      <button onClick={()=>MyRouters.goToLogin(navigate)}>Area do Administrador</button>
+      <button onClick={()=>MyRouters.goToList(navigate)}>Ver Viagens</button>
     </div>
   )
 }

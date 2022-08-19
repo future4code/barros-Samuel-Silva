@@ -2,39 +2,50 @@ import React, { useState } from "react";
 import styled from "styled-components"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { StyleFormDiv, StyleForm } from "../style";
+import { useEffect } from "react";
+import { StyleForm } from "../style";
 import { useForm } from "../hooks/useForm";
-import { PostApplyToTrip_URL } from "../constants/constants";
+import  useCountry  from "../hooks/useCountry"
+import { BASE_URL } from "../constants/constants";
+import * as MyRouters from "../Rotas/Coodinator";
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const ApplicationFormPage = () => {
     
     const navigate = useNavigate();
+    const [formulario,setFormulario] = useState({});
 
-    const goToLast = () => {
-        navigate("/Lista")
-      }
-    
-    const alertCad = () => {
-        alert("Cadastro efetuado com sucesso")
-      }
-      
-  
-    const [body,onChange,clear]=useForm({ email: "", password: ""})
+   // useEffect(()=>{ApplicationFormPage()},[]);
+       
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    const createTrip = (event) => {
+    const [body, id, onChange, clear]=useForm({ email: "", password: ""})
+    const myHeaders = {headers: {"Content-Type": "application/json"}};
+    const myBody = {body: {"Content-Type": "application/json"}};
+ 
+
+    const applyTrip = (event) => {
         event.preventDefault()
-        axios.post(`${PostApplyToTrip_URL}`, body).
-        then((response)=>{
-            console.log("Cadastrado")
-            console.log(response.data);
-        }).catch((error)=>{
-            console.log("deu erro")
+        axios.post('${BASE_URL})/trip/${id}',
+        {headers:{ auth: localStorage.getItem("token")}
+        })
+        .then ((response)=>{
+            console.log(response.data)
+            setFormulario(response.data)
+            MyRouters.goToList(navigate)
+        })
+        .catch((er)=>{
+            alert(er.response.data.message)
         })
         clear();
-        
     }
+
+    console.log(formulario)
+    
    
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     return (
         <div>
             <h1>Inscreva-se para uma viagem</h1>
@@ -91,12 +102,11 @@ const ApplicationFormPage = () => {
                        required
                        value={body.country}
                        onChange={onChange}>
-                        <option>Brasil</option>
-                        <option>China</option>
+                        <option >PAIS</option>
                 </select>
             </StyleForm>
-            <button type="button" onClick={goToLast}>Voltar</button>
-            <button type="button" onClick={alertCad}>Enviar</button>
+            <button onClick={()=>MyRouters.goToLast(navigate)}>Voltar</button>
+            <button onClick={applyTrip}>Enviar</button>
         </div>
     )
 }
