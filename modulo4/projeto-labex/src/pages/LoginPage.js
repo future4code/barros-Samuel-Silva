@@ -3,7 +3,7 @@ import axios from "axios";
 import { useForm } from "../hooks/useForm"
 import { PostLogin_URL } from "../constants/constants"
 import { useNavigate } from 'react-router-dom';
-import { StyleLogin } from "../style";
+import { StyleLogin, StyleLoginExt } from "../style";
 import * as MyRouters from "../Rotas/Coodinator";
 
 const LoginPage = () => {
@@ -13,25 +13,20 @@ const LoginPage = () => {
     const navigate = useNavigate()
 
     const fazerLogin = (event) => {
-        event.preventDefault()        //evita que a página seja renderizada novamente ao enviar o formulário
+        event.preventDefault()
 
         axios.post(`${PostLogin_URL}`, form)
             .then((response) => {
                 console.log(response.data)
-                localStorage.setItem("token", response.data.token)              //guarda o token no local.storage
+                localStorage.setItem("token", response.data.token)
                 MyRouters.goToAdmin(navigate)
             })
             .catch((error) => console.log(error.message))
-
         localStorage.removeItem("token")                                       //fazer logout
-
         clear();
-
     }
-
     return (
-
-        <div >
+        <StyleLoginExt >
             <StyleLogin onSubmit={fazerLogin}>
                 <h1>LOGIN</h1>
                 <label htmlFor="email">E-mail: </label>
@@ -57,9 +52,9 @@ const LoginPage = () => {
                     pattern="^.{3,}$"
                 />
                 <button>Login</button>
-                <button type="button" onClick={() => MyRouters.goToHome(navigate)}>Voltar</button>
             </StyleLogin>
-        </div>
+            <button type="button" onClick={() => MyRouters.goToHome(navigate)}>Voltar</button>
+        </StyleLoginExt>
     )
 }
 

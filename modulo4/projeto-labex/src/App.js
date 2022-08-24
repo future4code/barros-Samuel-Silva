@@ -1,6 +1,5 @@
 import React from "react";
 import Routers from "./Rotas/Routers";
-import GlobalStyle from "./styles/global";
 import { StyleFormDiv, Container } from "./style";
 
 
@@ -9,7 +8,7 @@ function App() {
     <Container>
       
         <Routers/>
-        <GlobalStyle/>
+  
       
     </Container>
 

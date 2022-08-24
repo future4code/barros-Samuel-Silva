@@ -8,17 +8,17 @@
         navigate("/login")
     }
     export const goToAdmin = (navigate) => {
-        navigate("/Admin")
+        navigate("/admin/trips")
     }
     export const goToCreateTrip = (navigate) => {
-        navigate("/criar")
+        navigate("/admin/trips/create")
     }
     export const goToList = (navigate) => {
-        navigate("/Lista")
+        navigate("/trips/list")
     }
     export const goToForm = (navigate) => {
-        navigate("/Inscreva")
+        navigate("/trips/application")
     }
     export const goToDetails = (navigate) => {
-        navigate("/Detalhes")
+        navigate("/admin/trips/:id")
     }

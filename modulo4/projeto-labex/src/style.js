@@ -8,7 +8,7 @@ export const Container = styled.body`
     background-image:url(${background});
     background-size: cover;
     color: whitesmoke;
-   
+    height: 1000px;
     img{
         margin: 2vh;
     }
@@ -24,202 +24,217 @@ export const Container = styled.body`
        box-shadow:  0 0 2px 2px;
     }    
 `
-//////////////////////////////////////////////////////////////////////////////////// Home page
+//////////////////////////////////////////////////////////////////////////////////// HOME - ok
 export const StyleHome = styled.div`    
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 500px;
     margin: 0 auto;
     h1{
         font-style: italic;
         font-size: xxx-large;
         font-family: monospace;
-    }   
+    }
+   
 `
-///////////////////////////////////////////////////////////////////////////////// Painel Admin
+export const StyleHomeExt = styled.div`  
+text-align:center ;
+button{
+        background-color: #7c1c17;
+        font-size: large;
+        color: whitesmoke;
+        border-radius: 20px;
+        width: 200px;
+        padding: 3px;
+        margin: 10px;
+    }
+    button:hover {
+       box-shadow:  0 0 2px 2px;
+    }           
+`
+///////////////////////////////////////////////////////////////////////////////// PAINEL ADMIN - ok
 
 export const StyleAdmin = styled.div`  
-    flex-direction: column;
     text-align: center;
-    color: whitesmoke;
-    
-    button{
+    button:nth-child(2){
         background-color: #7c1c17;
         color: whitesmoke;
         border-radius: 20px;
-        min-width: 10vw;
-        padding: 0.5vw;
-        margin: 2vw;
+        width: 100px;
     }
-    input{
-        width: 30vw;
+    button:nth-child(3){
         background-color: #7c1c17;
-        border-radius: 5px;
+        color: whitesmoke;
+        border-radius: 20px;
+        width: 100px;
     }
-`
-export const StyleList = styled.ul`   
-   display: grid;
-   justify-items: center;
-   width: 60vw;
-   padding: 1vw;
-    font-family: 'Franklin Gothic Medium';
+    h1{
+        font-style: italic;
+        font-size: xxx-large;
+        font-family: monospace;
+    }
+ `
+export const StyleListAdmin = styled.ul`  
+    text-align: center;
     border-radius: 20px;
-    margin-top: 0.8vw;
     box-shadow: 2px 2px 2px 2px;
-    button{
-        width: 10vh;
-    }
-    
+   
 `
-////////////////////////////////////////////////////////////////////Detalhes
+/////////////////////////////////////////////////////////////////////////////// DETALHES
 
-export const StyleDateils = styled.div`  
-    display: flex;
-    background-color: #7c1c17;
-    flex-direction: column;
+export const StyleTrip = styled.div`    
+    display: grid;
     justify-content: space-around;
-    height: 50vh;
-    width: 50vw;
-    margin-bottom: 2vh;
-    align-items: center;
-    color: whitesmoke;
-    button{
-        background-color: #7c1c17;
-        color: whitesmoke;
-        border-radius: 20px;
-        min-width: 10vw;
-        padding: 0.5vw;
-        margin: 2vw;
-    }
-    input{
-        width: 30vw;
-        background-color: #7c1c17;
-        border-radius: 5px;
-    }
-    `
-    ////////////////////////////////////////////////////////////////////////INSCREVA-SE 
-
-export const StyleForm = styled.form`  
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100vh;
+    gap: 2vh;
+    padding: 2vh;
+`
+export const StyleTripCand = styled.div`    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px;
-    gap: 2vh;
-    justify-content: center;
-    margin-top: 2vw;
-    align-items: center;
-    
     button{
         background-color: #7c1c17;
         color: whitesmoke;
         border-radius: 20px;
-        min-width: 10vw;
-        padding: 0.5vw;
-        margin: 2vw;
+        width: 80px;
+        padding: 2px;
+        margin: 5px;
     }
-    input{
-        width: 30vw;
-        background-color: whitesmoke;
-        border-radius: 5px;
-        text-align: center;
-    }
-    select{
-        width: 30vw;
-        background-color: whitesmoke;
-        border-radius: 5px;
-        text-align: center;
+    button:hover {
+       box-shadow:  0 0 2px 2px;
     }
 `
-export const StyleFormDiv = styled.div`  //Lista de Viagem, 
-    flex-direction: column;
-    height: 50vh;
-    width: 50vw;
-    gap: 2vh;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    margin-top: 2vw;
-    align-items: center;
-    color: whitesmoke;
-    
-    button{
-        background-color: #7c1c17;
-        color: whitesmoke;
-        border-radius: 20px;
-        min-width: 10vw;
-        padding: 0.5vw;
-        margin: 2vw;
-    }
-    input{
-        min-width: 30vw;
-        min-height: 5vh;
-        background-color: whitesmoke;
-        border-radius: 8px;
-        text-align: center;
-    }
-    select{
-        min-width: 30vw;
-        min-height: 5vh;
-        background-color: whitesmoke;
-        border-radius: 8px;
-        text-align: center;
-    }
-    h1{
-        font-style: italic;
-        font-size: xxx-large;
-        font-family: monospace;
-    }   
-`
-
-export const StyleListDiv = styled.div`
-    button{
-        background-color: #7c1c17;
-        color: whitesmoke;
-        border-radius: 20px;
-        min-width: 10vw;
-        padding: 0.5vw;
-        margin: 2vw;
-    }
-    h1{
-        font-style: italic;
-        font-size: xxx-large;
-        font-family: monospace;
-    }   
-`
-////////////////////////////////////////////////login///////////////////////////////////
-
-export const StyleLogin = styled.form`     
+export const StyleTripExt = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    margin: 0 auto;
-    
- 
+    width: 90%;
+    justify-content: space-around;
     h1{
         font-style: italic;
         font-size: xxx-large;
         font-family: monospace;
-    }   
-    button{
-        background-color: #7c1c17;
-        color: whitesmoke;
-        border-radius: 20px;
-        width: 15vw;
-        padding: 0.5vw;
-        margin: 2vw;
-    }
-    input{
-        min-width: 30vw;
-        min-height: 5vh;
-        background-color: whitesmoke;
-        border-radius: 8px;
-        text-align: center;
-        margin: 2vh;
     }
 `
 
 
-//////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////CRIAR VIAGEM & INSCREVA-SE -ok
+export const StyleForm = styled.form`  
+   margin: auto;
+   height: 600px;
+`
+export const StyleFormExt = styled.form`   
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    input{
+        width: 500px;
+        height: 30px;
+        border-radius: 20px;
+        text-align: center;
+        margin: 20px;
+    }      
+    select{
+        width: 500px;
+        height: 30px;
+        border-radius: 20px;
+        text-align: center;
+        margin: 20px;
+    }      
+    button{
+        background-color: #7c1c17;
+        font-size: large;
+        color: whitesmoke;
+        border-radius: 20px;
+        width: 200px;
+        padding: 3px;
+        margin: 20px;
+    }
+    button:hover {
+       box-shadow:  0 0 2px 2px;
+    }      
+    h1{
+        font-style: italic;
+        font-size: xxx-large;
+        font-family: monospace;
+    }
+`
+
+///////////////////////////////////////////////////////////////////////////////////LOGIN - ok
+export const StyleLogin = styled.form`    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 400px;
+    margin: 0 auto;
+    h1{
+        font-style: italic;
+        font-size: xxx-large;
+        font-family: monospace;
+    }
+   
+`
+export const StyleLoginExt = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    button{
+        background-color: #7c1c17;
+        font-size: large;
+        color: whitesmoke;
+        border-radius: 20px;
+        width: 200px;
+        padding: 3px;
+        margin: 10px;
+    }
+    button:hover {
+       box-shadow:  0 0 2px 2px;
+    }      
+    input{
+        width: 500px;
+        height: 30px;
+        border-radius: 20px;
+        text-align: center;
+        margin: 20px;
+    }      
+`
+///////////////////////////////////////////////////////////////////////////////////TRIPLIST - ok
+export const StyleList = styled.div`    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2vh;
+    text-align: center;
+    box-shadow: 2px 2px 2px 2px;
+    border-radius: 20px;
+    gap: 2vh;
+    padding: 2vh;
+`
+export const StyleListExt = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin-top: 20px;
+    button{
+        background-color: #7c1c17;
+        font-size: large;
+        color: whitesmoke;
+        border-radius: 20px;
+        width: 200px;
+        padding: 3px;
+        margin: 10px;
+    }
+    button:hover {
+       box-shadow:  0 0 2px 2px;
+    }      
+`

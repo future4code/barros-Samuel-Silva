@@ -3,96 +3,106 @@ import { BASE_URL } from "../constants/constants";
 import axios from "axios";
 import { useForm } from "../hooks/useForm"
 import { useNavigate } from "react-router-dom";
-import { StyleFormDiv, StyleForm } from "../style";
+import { StyleFormExt } from "../style";
 import useProtectPage from "../hooks/useProtectPage";
 import * as MyRouters from "../Rotas/Coodinator";
 
 const CreateTripPage = () => {
 
-    const [body,onChange,clear]=useForm({ email: "", password: ""})
+    const [form, onChange, clear] = useForm({ name: "", planet: "", date: "", description: "", durationInDays: "" })
 
     useProtectPage()
     const navigate = useNavigate();
 
+    const body = {
+        "name": form.name,
+        "planet": form.planet,
+        "date": form.date,
+        "description": form.description,
+        "durationInDays": form.durationInDays
+    }
+
     const createTrip = (event) => {
         event.preventDefault()
-        axios.post(`${BASE_URL}`, body).
-        then((response)=>{
-            {MyRouters.goToList()};
-            console.log(response.data);
-        }).catch((error)=>{
-            console.log("deu erro")
-        })
+        axios.post(`${BASE_URL}`, body,
+            {
+                header: { auth: localStorage.getItem("token") }
+            })
+            .then((response) => {
+                { MyRouters.goToList() };
+                console.log(response.data);
+            }).catch((error) => {
+                alert("Erro ao criar viagem!")
+                console.log("deu erro")
+            })
         clear();
-        
+            console.log(body)
     }
 
     return (
-        <StyleForm onSubmit={createTrip}>
+        <StyleFormExt onSubmit={createTrip}>
             <h1>Criar viagem</h1>
-                <label htmlFor="name">Nome: </label>
-                <input
-                    id="name"
-                    name="name"
-                    type="name"
-                    required
-                    placeholder="nome"
-                    value={body.name}
-                    onChange={onChange}
-                    pattern="[a-zA-Z]{5,}"
-                />
-                <label htmlFor="name">Planeta: </label>
-                <select 
-                id="planets"
-                name="planets" 
-                type="planets"
+            <label htmlFor="name">Nome: </label>
+            <input
+                id="name"
+                name="name"
+                type="text"
                 required
-                value={body.name}
+                placeholder="seu nome"
+                value={form.name}
                 onChange={onChange}
-                >
-                    <option value="Júpiter">Júpiter</option>
-                    <option value="Marte">Marte</option>
-                    <option value="Mercúrio">Mercúrio</option>
-                    <option value="Netuno">Netuno</option>
-                    <option value="Saturno">Saturno</option>
-                    <option value="Terra" selected="selected">Terra</option>
-                    <option value="Urano">Urano</option>
-                    <option value="Vênus">Vênus</option>
-                </select>
-                <label htmlFor="name">Data: </label>
-                <input
-                       id="date"
-                       name="date"
-                       type="date"
-                       required
-                       placeholder="date"
-                       value={body.date}
-                       onChange={onChange}
-                       pattern="^[0-31]{2}[/][0-12]{2}[/][2023-9999]{4}$"
-                   />
-                <label htmlFor="name">Descrição: </label>
-                <input id="description"
-                       name="description"
-                       type="description"
-                       required
-                       placeholder="description"
-                       value={body.description}
-                       onChange={onChange}
-                       pattern="[a-zA-Z]{30,}"
-                    />
-                <label htmlFor="name">Duração em dias: </label>
-                <input id="duration"
-                       name="duration"
-                       type="duration"
-                       required
-                       placeholder="duration"
-                       value={body.duration}
-                       onChange={onChange}
-                       pattern="[5-9]{1}[0-9]{1}"
-                    />
-            <button type="button" onClick={()=>MyRouters.goToLast(navigate)}>Voltar</button>
+                pattern="^.{5,}$"
+            />
+            <label htmlFor="planet">Planeta: </label>
+           <select
+                id="planet"
+                name="planet"
+                required
+                value={form.planet}
+                onChange={onChange}
+            >
+                <option value="Júpiter">Júpiter</option>
+                <option value="Marte">Marte</option>
+                <option value="Mercúrio">Mercúrio</option>
+                <option value="Netuno">Netuno</option>
+                <option value="Saturno">Saturno</option>
+                <option value="Terra">Terra</option>
+                <option value="Urano">Urano</option>
+                <option value="Vênus">Vênus</option>
+            </select>
+            <label htmlFor="date">Data: </label>
+            <input
+                id="date"
+                name="date"
+                type="date"
+                required
+                value={form.date}
+                onChange={onChange}
+                pattern="^[0-31]{2}[/][0-12]{2}[/][2023-9999]{4}$"
+            />
+            <label htmlFor="description">Descrição: </label>
+            <input id="description"
+                name="description"
+                type="text"
+                required
+                placeholder="digite seu texto"
+                value={form.description}
+                onChange={onChange}
+                pattern="^.{30,}$"
+            />
+            <label htmlFor="durationInDays">Duração em dias: </label>
+            <input id="durationInDays"
+                name="durationInDays"
+                type="number"
+                required
+                placeholder="duração em dias"
+                value={form.durationInDays}
+                onChange={onChange}
+                min={50}
+            />
+            <button type="button" onClick={() => MyRouters.goToLast(navigate)}>Voltar</button>
             <button>Criar</button>
-        </StyleForm>
+        </StyleFormExt>
     )
 }
 

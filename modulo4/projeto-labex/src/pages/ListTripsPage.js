@@ -1,29 +1,26 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import axios from "axios";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, StyleList, StyleLogin } from "../style";
+import { StyleList, StyleListExt } from "../style";
 import { BASE_URL } from '../constants/constants';
 import useRequestData from '../hooks/useRequestData';
 import * as MyRouters from "../Rotas/Coodinator";
 
 const ListTripsPage = () => {
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////// get Viagens
+//////////////////////////////////////////////////////////////////////////////////////////////////GET TRIPS
 
-  const [dataListTrips, isLoadingListTrips, erroListTrips] = useRequestData(`${BASE_URL}`)    //recebendo os dados do hook
+const [dataListTrips, isLoadingListTrips, erroListTrips] = useRequestData(`${BASE_URL}`)   
 
-  const lista = dataListTrips && dataListTrips.map((perfil) => {
+  const lista = dataListTrips && dataListTrips.map((perfil, index) => {
     return (
-      <StyleList>
-        <p>Nome:{perfil.name}</p>
-        <p>Descrição:{perfil.description}</p>
-        <p>Planeta:{perfil.planet}</p>
-        <p>Duração em dias:{perfil.durationInDay}</p>
-        <p>Data:{perfil.date}</p>
-        <br />
+      <StyleList key={index}>
+        <span><strong>Nome: </strong>{perfil.name}</span>
+        <span><strong>Descrição: </strong>{perfil.description}</span>
+        <span><strong>Planeta: </strong>{perfil.planet}</span>
+        <span><strong>Duração: </strong>{perfil.durationInDays}</span>
+        <span><strong>Data: </strong>{perfil.date}</span>
       </StyleList>
 
     )
@@ -31,23 +28,17 @@ const ListTripsPage = () => {
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
-    <div>
-
-      <StyleLogin>
-        <h1>Lista de viagens</h1>
-        <div>
-          {isLoadingListTrips && "Carregando..."}
-          <ul>
-            {!isLoadingListTrips && dataListTrips && lista}
-          </ul>
-          {!isLoadingListTrips && !dataListTrips && erroListTrips}
-        </div>
-      </StyleLogin>
-      <button type="button" onClick={() => MyRouters.goToLast(navigate)}>Voltar</button>
+    <StyleListExt>
+      <h1>Lista de viagens</h1>
+      <StyleList>
+        {isLoadingListTrips && "Carregando..."}
+        {!isLoadingListTrips && dataListTrips && lista}
+        {!isLoadingListTrips && !dataListTrips && erroListTrips}
+      </StyleList>
       <button type="button" onClick={() => MyRouters.goToForm(navigate)}>Inscreva-se</button>
-    </div>
+      <button type="button" onClick={() => MyRouters.goToLast(navigate)}>Voltar</button>
+    </StyleListExt>
   )
 }
-
 
 export default ListTripsPage;
