@@ -6,7 +6,7 @@ const useRequestData = (url) => {  //url completa
     const [data, setData] = useState(undefined)  //undefined, pois não sei o que vai ser
     const [isLoading, setIsLoading] = useState(undefined)
     const [erro, setErro] = useState(undefined)
-    const [page, setPage] = useState(undefined)
+    const [reload, setReload] = useState(undefined)
     useEffect(() => {
         setIsLoading(true);                 //carregando
         axios.get(url)
@@ -17,10 +17,10 @@ const useRequestData = (url) => {  //url completa
           setIsLoading(false)             //deu erro, para de carregar
           setErro(error)                    //mensagem de erro
         })
-      }, [])
+      }, [reload])
 
     return (
-      [data, isLoading, erro, page, setPage]
+      [data, isLoading, erro, reload, setReload]
     )
 }
 

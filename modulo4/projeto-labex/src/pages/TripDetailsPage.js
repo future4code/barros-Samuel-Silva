@@ -46,8 +46,8 @@ const TripDetailsPage = ({ reload, setReload }) => {
             .then((response) => {
                 setReload(!reload)
             })
-            .catch((er) => {
-                alert(er.response.data.message)
+            .catch((error) => {
+                alert(error.response.data.message)
             })
     }
 
@@ -66,7 +66,7 @@ const TripDetailsPage = ({ reload, setReload }) => {
                 setIsLoading(false)
                 setError(er.response.data.message)
             })
-    }, [reload])
+    }, [])
 
     const candidates = tripDetails.candidates && tripDetails.candidates.map((person, index) => {
         return <div key={index}>

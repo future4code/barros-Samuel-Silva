@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { StyleHome, StyleHomeExt } from "../style";
+import { StyleHomeExt } from "../style";
 import logo from "../img/logo.jpg"
 import * as MyRouters from "../Rotas/Coodinator";
 
@@ -10,10 +10,8 @@ const HomePage = () => {
 
   return (
     <StyleHomeExt>
-      <StyleHome>
-        <img src={logo} alt="Logo Labex"></img>
-        <h1>Aqui, o céu não é o limite!</h1>
-      </StyleHome>
+      <img src={logo} alt="Logo Labex"></img>
+      <h1>Aqui, o céu não é o limite!</h1>
       <button onClick={() => MyRouters.goToLogin(navigate)}>Area do Administrador</button>
       <button onClick={() => MyRouters.goToList(navigate)}>Ver Viagens</button>
     </StyleHomeExt>

@@ -3,11 +3,12 @@ import { BASE_URL } from "../constants/constants";
 import axios from "axios";
 import { useForm } from "../hooks/useForm"
 import { useNavigate } from "react-router-dom";
-import { StyleFormExt } from "../style";
+import { StyleButton, StyleFormExt } from "../style";
 import useProtectPage from "../hooks/useProtectPage";
 import * as MyRouters from "../Rotas/Coodinator";
 
 const CreateTripPage = () => {
+
 
     const [form, onChange, clear] = useForm({ name: "", planet: "", date: "", description: "", durationInDays: "" })
 
@@ -26,17 +27,17 @@ const CreateTripPage = () => {
         event.preventDefault()
         axios.post(`${BASE_URL}`, body,
             {
-                header: { auth: localStorage.getItem("token") }
+                headers: { auth: localStorage.getItem("token") }
             })
             .then((response) => {
-                { MyRouters.goToList() };
+                alert("Confira sua viagem criada...")
+                 MyRouters.goToList(navigate);
                 console.log(response.data);
             }).catch((error) => {
-                alert("Erro ao criar viagem!")
-                console.log("deu erro")
+               alert(error)
             })
         clear();
-            console.log(body)
+            
     }
 
     return (
@@ -48,10 +49,11 @@ const CreateTripPage = () => {
                 name="name"
                 type="text"
                 required
-                placeholder="seu nome"
+                placeholder="nome da viagem"
                 value={form.name}
                 onChange={onChange}
                 pattern="^.{5,}$"
+               
             />
             <label htmlFor="planet">Planeta: </label>
            <select
@@ -61,6 +63,7 @@ const CreateTripPage = () => {
                 value={form.planet}
                 onChange={onChange}
             >
+                <option value="">escolha um planeta...</option>
                 <option value="Júpiter">Júpiter</option>
                 <option value="Marte">Marte</option>
                 <option value="Mercúrio">Mercúrio</option>
@@ -78,7 +81,7 @@ const CreateTripPage = () => {
                 required
                 value={form.date}
                 onChange={onChange}
-                pattern="^[0-31]{2}[/][0-12]{2}[/][2023-9999]{4}$"
+                pattern="\d{2}-\d{2}-\d{4}"
             />
             <label htmlFor="description">Descrição: </label>
             <input id="description"
@@ -95,13 +98,15 @@ const CreateTripPage = () => {
                 name="durationInDays"
                 type="number"
                 required
-                placeholder="duração em dias"
+                placeholder="dias de viagem"
                 value={form.durationInDays}
                 onChange={onChange}
                 min={50}
             />
-            <button type="button" onClick={() => MyRouters.goToLast(navigate)}>Voltar</button>
-            <button>Criar</button>
+            <StyleButton>
+            <button type="button" onClick={() => MyRouters.goToLast(navigate)}>[«] Voltar</button>
+            <button>[√] Criar</button>
+            </StyleButton>
         </StyleFormExt>
     )
 }

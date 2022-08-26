@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { StyleList, StyleListExt } from "../style";
+import { StyleButton, StyleList, StyleListExt } from "../style";
 import { BASE_URL } from '../constants/constants';
 import useRequestData from '../hooks/useRequestData';
 import * as MyRouters from "../Rotas/Coodinator";
@@ -35,8 +35,10 @@ const [dataListTrips, isLoadingListTrips, erroListTrips] = useRequestData(`${BAS
         {!isLoadingListTrips && dataListTrips && lista}
         {!isLoadingListTrips && !dataListTrips && erroListTrips}
       </StyleList>
+      <StyleButton>
       <button type="button" onClick={() => MyRouters.goToForm(navigate)}>Inscreva-se</button>
-      <button type="button" onClick={() => MyRouters.goToLast(navigate)}>Voltar</button>
+      <button type="button" onClick={() => MyRouters.goToLast(navigate)}> « Voltar</button>
+      </StyleButton>
     </StyleListExt>
   )
 }

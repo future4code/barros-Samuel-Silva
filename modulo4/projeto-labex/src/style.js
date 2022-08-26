@@ -1,17 +1,16 @@
 import styled from "styled-components";
 import background from "../src/img/fundo.jpg"
 
-export const Container = styled.body`
+export const Container = styled.body`  ///////////BACKGROUND "FLUTUANTE"
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image:url(${background});
-    background-size: cover;
+    background-image:url(${background}) ;
+    background-repeat: no-repeat;              
+    background-size: 100% auto;
+    background-position: center top;
+    background-attachment: fixed;
     color: whitesmoke;
-    height: 1000px;
-    img{
-        margin: 2vh;
-    }
     button{
         background-color: #7c1c17;
         color: whitesmoke;
@@ -25,23 +24,10 @@ export const Container = styled.body`
     }    
 `
 //////////////////////////////////////////////////////////////////////////////////// HOME - ok
-export const StyleHome = styled.div`    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 500px;
-    margin: 0 auto;
-    h1{
-        font-style: italic;
-        font-size: xxx-large;
-        font-family: monospace;
-    }
-   
-`
 export const StyleHomeExt = styled.div`  
+margin-top: 50px;
 text-align:center ;
+height:510px;
 button{
         background-color: #7c1c17;
         font-size: large;
@@ -57,19 +43,28 @@ button{
 `
 ///////////////////////////////////////////////////////////////////////////////// PAINEL ADMIN - ok
 
-export const StyleAdmin = styled.div`  
+export const StyleAdmin = styled.div`     
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 2vh;
     text-align: center;
-    button:nth-child(2){
+    box-shadow: 2px 2px 2px 2px;
+    border-radius: 20px;
+    gap: 2vh;
+    padding: 2vh;
+    button:nth-child(2){                    //Detalhes
         background-color: #7c1c17;
         color: whitesmoke;
         border-radius: 20px;
         width: 100px;
+        
     }
-    button:nth-child(3){
+    button:nth-child(3){                    //Delete
         background-color: #7c1c17;
         color: whitesmoke;
         border-radius: 20px;
         width: 100px;
+        
     }
     h1{
         font-style: italic;
@@ -81,7 +76,20 @@ export const StyleListAdmin = styled.ul`
     text-align: center;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px;
-   
+    button{                              //Delete
+        background-color: #7c1c17;
+        color: whitesmoke;
+        border-radius: 20px;
+        width: 100px;
+    }
+    
+`
+export const StyleAdminExt = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin-top: 20px;
 `
 /////////////////////////////////////////////////////////////////////////////// DETALHES
 
@@ -90,13 +98,26 @@ export const StyleTrip = styled.div`
     justify-content: space-around;
     gap: 2vh;
     padding: 2vh;
+    button{
+        background-color: #7c1c17;
+        color: whitesmoke;
+        border-radius: 20px;
+        width: 200px;
+        padding: 2px;
+        margin: 5px;
+        font-size: large;
+    }
+    button:hover {
+       box-shadow:  0 0 2px 2px;
+    }
 `
 export const StyleTripCand = styled.div`    
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     text-align: center;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px;
+    width: 80%;
     button{
         background-color: #7c1c17;
         color: whitesmoke;
@@ -113,13 +134,15 @@ export const StyleTripExt = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    width: 80%;
+    height: 100%;
     justify-content: space-around;
     h1{
         font-style: italic;
         font-size: xxx-large;
         font-family: monospace;
     }
+    
 `
 
 
@@ -133,7 +156,7 @@ export const StyleFormExt = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 900px;
+    height: 880px;
     input{
         width: 500px;
         height: 30px;
@@ -168,26 +191,13 @@ export const StyleFormExt = styled.form`
 `
 
 ///////////////////////////////////////////////////////////////////////////////////LOGIN - ok
-export const StyleLogin = styled.form`    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 400px;
-    margin: 0 auto;
-    h1{
-        font-style: italic;
-        font-size: xxx-large;
-        font-family: monospace;
-    }
-   
-`
+
 export const StyleLoginExt = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: center;
+    height: 560px;
     button{
         background-color: #7c1c17;
         font-size: large;
@@ -210,21 +220,28 @@ export const StyleLoginExt = styled.div`
 `
 ///////////////////////////////////////////////////////////////////////////////////TRIPLIST - ok
 export const StyleList = styled.div`    
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 2vh;
-    text-align: center;
-    box-shadow: 2px 2px 2px 2px;
-    border-radius: 20px;
+   display: grid;
+    justify-content: space-around;
     gap: 2vh;
     padding: 2vh;
+    box-shadow: 2px 2px 2px 2px;
+    border-radius: 20px;
+    text-align: center;
 `
-export const StyleListExt = styled.div`
+export const StyleListExt = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    font-size: 15px;
     margin-top: 20px;
+    h1{
+        font-style: italic;
+        font-size: xxx-large;
+        font-family: monospace;
+    }
+`
+//////////////////////////////////////////////////////////////BOTOES
+export const StyleButton = styled.div`
     button{
         background-color: #7c1c17;
         font-size: large;
@@ -233,6 +250,7 @@ export const StyleListExt = styled.div`
         width: 200px;
         padding: 3px;
         margin: 10px;
+        margin: 20px 50px 20px 50px;
     }
     button:hover {
        box-shadow:  0 0 2px 2px;
