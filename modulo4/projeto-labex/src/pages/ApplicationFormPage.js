@@ -6,8 +6,8 @@ import { useForm } from "../hooks/useForm";
 import { BASE_URL } from "../constants/constants";
 import * as MyRouters from "../Rotas/Coodinator";
 import useRequestData from "../hooks/useRequestData";
-
-    // useEffect(()=>{ApplicationFormPage()},[]);
+import iconVoltar from "../img/icon-voltar.png"
+import iconOk from "../img/icon-ok.png"
 
     const ApplicationFormPage = (dataTrips) => {
     const navigate = useNavigate();
@@ -95,7 +95,7 @@ import useRequestData from "../hooks/useRequestData";
                 placeholder="seu texto"
                 value={form.applicationText}
                 onChange={onChange}
-                pattern="^.{50,}$"
+                pattern="^.{30,}$"
             />
             <label htmlFor="prof">Profissão: </label>
             <input
@@ -106,7 +106,7 @@ import useRequestData from "../hooks/useRequestData";
                 placeholder="profissão"
                 value={form.profession}
                 onChange={onChange}
-                pattern="^.{5,}$"
+                pattern="^.{10,}$"
             />
             <label htmlFor="country">País: </label>
             <select 
@@ -369,8 +369,8 @@ import useRequestData from "../hooks/useRequestData";
             <option value="Zâmbia">Zâmbia</option>
         </select>
             <StyleButton>
-            <button onClick={() => MyRouters.goToLast(navigate)}>[«] Voltar</button>
-            <button >[√] Enviar</button>
+            <button onClick={() => MyRouters.goToLast(navigate)}><img src={iconVoltar}></img>   Voltar</button>
+            <button ><img src={iconOk}></img>   Enviar</button>
             </StyleButton>
         </StyleFormExt>
     )

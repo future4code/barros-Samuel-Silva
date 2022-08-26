@@ -6,6 +6,11 @@ import { BASE_URL } from '../constants/constants';
 import useRequestData from '../hooks/useRequestData';
 import * as MyRouters from "../Rotas/Coodinator";
 import useProtectPage from "../hooks/useProtectPage";
+import iconDetalhes from "../img/icon-doc.png"
+import iconDelete from "../img/icon-remover.png"
+import iconVoltar from "../img/icon-voltar.png"
+import iconOk from "../img/icon-ok.png"
+import iconLogout from "../img/icon-logout.png"
 
 const AdminHomePage = () => {
   
@@ -43,8 +48,8 @@ const AdminHomePage = () => {
     return (
       < StyleListAdmin key={viagem.id}>
         <h2>{viagem.name}</h2>
-        <button onClick={() => { MyRouters.goToDetails(navigate(viagem.id)) }}>Detalhes</button>
-        <button onClick={() => { delTrip(viagem.id) }}>Delete</button>
+        <button onClick={() => { MyRouters.goToDetails(navigate(viagem.id)) }}><img src={iconDetalhes}></img> Detalhes</button>
+        <button onClick={() => { delTrip(viagem.id) }}><img src={iconDelete}></img> Delete</button>
       </StyleListAdmin>
     )
   })
@@ -61,9 +66,9 @@ const AdminHomePage = () => {
         {!isLoading && !data && erro}
       </StyleAdmin>
       <StyleButton>
-        <button onClick={() => MyRouters.goToLast(navigate)}>[«] Voltar</button>
-        <button onClick={() => MyRouters.goToCreateTrip(navigate)}>[√] Criar Viagem</button>
-        <button onClick={buttonLogout}>[X] Logout</button>
+        <button onClick={() => MyRouters.goToLast(navigate)}><img src={iconVoltar}></img>  Voltar</button>
+        <button onClick={() => MyRouters.goToCreateTrip(navigate)}><img src={iconOk}></img>  Criar Viagem</button>
+        <button onClick={buttonLogout}><img src={iconLogout}></img>   Logout</button>
       </StyleButton>
     </StyleAdminExt>
 

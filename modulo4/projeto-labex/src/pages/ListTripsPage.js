@@ -4,6 +4,8 @@ import { StyleButton, StyleList, StyleListExt } from "../style";
 import { BASE_URL } from '../constants/constants';
 import useRequestData from '../hooks/useRequestData';
 import * as MyRouters from "../Rotas/Coodinator";
+import iconInscr from "../img/icon-inscreva.png"
+import iconVoltar from "../img/icon-voltar.png"
 
 const ListTripsPage = () => {
 
@@ -36,8 +38,8 @@ const [dataListTrips, isLoadingListTrips, erroListTrips] = useRequestData(`${BAS
         {!isLoadingListTrips && !dataListTrips && erroListTrips}
       </StyleList>
       <StyleButton>
-      <button type="button" onClick={() => MyRouters.goToForm(navigate)}>Inscreva-se</button>
-      <button type="button" onClick={() => MyRouters.goToLast(navigate)}> « Voltar</button>
+      <button type="button" onClick={() => MyRouters.goToForm(navigate)}><img src={iconInscr}></img>  Inscreva-se</button>
+      <button type="button" onClick={() => MyRouters.goToLast(navigate)}><img src={iconVoltar}></img> Voltar</button>
       </StyleButton>
     </StyleListExt>
   )

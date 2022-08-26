@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { StyleButton, StyleFormExt } from "../style";
 import useProtectPage from "../hooks/useProtectPage";
 import * as MyRouters from "../Rotas/Coodinator";
+import iconVoltar from "../img/icon-voltar.png"
+import iconOK from "../img/icon-ok.png"
 
 const CreateTripPage = () => {
-
 
     const [form, onChange, clear] = useForm({ name: "", planet: "", date: "", description: "", durationInDays: "" })
 
@@ -81,7 +82,7 @@ const CreateTripPage = () => {
                 required
                 value={form.date}
                 onChange={onChange}
-                pattern="\d{2}-\d{2}-\d{4}"
+                min={"01/01/2023"} 
             />
             <label htmlFor="description">Descrição: </label>
             <input id="description"
@@ -104,8 +105,8 @@ const CreateTripPage = () => {
                 min={50}
             />
             <StyleButton>
-            <button type="button" onClick={() => MyRouters.goToLast(navigate)}>[«] Voltar</button>
-            <button>[√] Criar</button>
+            <button type="button" onClick={() => MyRouters.goToLast(navigate)}><img src={iconVoltar}></img> Voltar</button>
+            <button><img src={iconOK}></img> Criar</button>
             </StyleButton>
         </StyleFormExt>
     )

@@ -29,16 +29,19 @@
 ![Arvore de componentes](/src/wireframe/fluxograma.png)
 
 
-## Status do Projeto
+## Tela Inicial
 
-🚧 Projeto em construção 🚧 
+![Tela Inicial](/src/img/tela.jpg)
 
 
 ## Funcionalidades do projeto
 
-- [ ] Wireframe das telas
-- [ ] API
-- [ ] Rotas entre as páginas
+- [ ] Visualizar viagens
+- [ ] Fazer Login como Administrador
+- [ ] Cadastrar novas viagens
+- [ ] Deletar Viagens
+- [ ] Canditar-se a uma viagem
+- [ ] Aprovar/Reprovar candidaturas
 
 📁
 ## Acesso ao projeto
@@ -59,4 +62,6 @@
 
 ✔️
 ## Conclusão
+
+Projeto que ajudo muito desenvolvimento de capturar dados de APIs e criação de rotas.
 

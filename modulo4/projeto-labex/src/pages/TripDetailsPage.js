@@ -5,21 +5,19 @@ import { BASE_URL_LIST, BASE_URL } from "../constants/constants"
 import { useEffect, useState } from "react"
 import * as MyRouters from "../Rotas/Coodinator"
 import { StyleTrip, StyleTripCand, StyleTripExt } from "../style.js"
+import iconVoltar from "../img/icon-voltar.png"
 
 const TripDetailsPage = ({ reload, setReload }) => {
 
     useProtectPage()
     
-
     const navigate = useNavigate()
     const pathParams = useParams()
     const [tripDetails, setTripDetails] = useState({})
     const [isLoading, setIsLoading] = useState(undefined)
     const [error, setError] = useState(undefined)
 
-
     const approve = (candidate) => {
-
         axios.put(`${BASE_URL}${pathParams.id}/candidates/${candidate.id}/decide`, {
             "approve": true
         }, {
@@ -115,7 +113,7 @@ const TripDetailsPage = ({ reload, setReload }) => {
                 {candidates}
             </StyleTripCand>
             <StyleTrip>
-                <button onClick={() => MyRouters.goToLast(navigate)}>Voltar</button>
+                <button onClick={() => MyRouters.goToLast(navigate)}><img src={iconVoltar}></img>  Voltar</button>
             </StyleTrip>
         </StyleTripExt>
 

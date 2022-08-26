@@ -8,7 +8,6 @@ import Login from '../pages/LoginPage';
 import ListTrips from '../pages/ListTripsPage';
 import TripDetails from '../pages/TripDetailsPage';
 
-
 const Routers = ({dataTrips, isLoadingTrips, errorTrips, reload, setReload})=> {
         return (
         <>

@@ -8,7 +8,8 @@ export const Container = styled.body`  ///////////BACKGROUND "FLUTUANTE"
     background-image:url(${background}) ;
     background-repeat: no-repeat;              
     background-size: 100% auto;
-    background-position: center top;
+    background-position: center ;
+    background-size: cover;
     background-attachment: fixed;
     color: whitesmoke;
     button{
@@ -21,16 +22,16 @@ export const Container = styled.body`  ///////////BACKGROUND "FLUTUANTE"
     }
     button:hover {
        box-shadow:  0 0 2px 2px;
-    }    
+    }     
 `
 //////////////////////////////////////////////////////////////////////////////////// HOME - ok
 export const StyleHomeExt = styled.div`  
 margin-top: 50px;
 text-align:center ;
-height:510px;
+height: 100vh;
 button{
         background-color: #7c1c17;
-        font-size: large;
+        font-size: medium;
         color: whitesmoke;
         border-radius: 20px;
         width: 200px;
@@ -40,6 +41,17 @@ button{
     button:hover {
        box-shadow:  0 0 2px 2px;
     }           
+    :nth-child(1)img{
+        height: 50%;
+    }
+    h1{
+        font-style: italic;
+        font-size: xxx-large;
+        font-family: monospace;
+        box-shadow: 0px 5px 0px 5px;
+        border-radius: 5px;
+        padding: 2vh;
+    }
 `
 ///////////////////////////////////////////////////////////////////////////////// PAINEL ADMIN - ok
 
@@ -53,36 +65,22 @@ export const StyleAdmin = styled.div`
     gap: 2vh;
     padding: 2vh;
     button:nth-child(2){                    //Detalhes
-        background-color: #7c1c17;
         color: whitesmoke;
         border-radius: 20px;
         width: 100px;
         
     }
     button:nth-child(3){                    //Delete
-        background-color: #7c1c17;
         color: whitesmoke;
         border-radius: 20px;
-        width: 100px;
-        
-    }
-    h1{
-        font-style: italic;
-        font-size: xxx-large;
-        font-family: monospace;
-    }
+        width: 100px;       
+    } 
  `
 export const StyleListAdmin = styled.ul`  
     text-align: center;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px;
-    button{                              //Delete
-        background-color: #7c1c17;
-        color: whitesmoke;
-        border-radius: 20px;
-        width: 100px;
-    }
-    
+
 `
 export const StyleAdminExt = styled.div`
     display: flex;
@@ -90,6 +88,11 @@ export const StyleAdminExt = styled.div`
     align-items: center;
     width: 90%;
     margin-top: 20px;
+    h1{
+        font-style: italic;
+        font-size: xxx-large;
+        font-family: monospace;
+    } 
 `
 /////////////////////////////////////////////////////////////////////////////// DETALHES
 
@@ -141,12 +144,9 @@ export const StyleTripExt = styled.div`
         font-style: italic;
         font-size: xxx-large;
         font-family: monospace;
-    }
-    
+    }    
 `
-
-
-    ///////////////////////////////////////////////////////////////CRIAR VIAGEM & INSCREVA-SE -ok
+ ///////////////////////////////////////////////////////////////CRIAR VIAGEM & INSCREVA-SE -ok
 export const StyleForm = styled.form`  
    margin: auto;
    height: 600px;
@@ -197,7 +197,7 @@ export const StyleLoginExt = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 560px;
+    height: 900px;
     button{
         background-color: #7c1c17;
         font-size: large;
@@ -217,6 +217,11 @@ export const StyleLoginExt = styled.div`
         text-align: center;
         margin: 20px;
     }      
+    h1{
+        font-style: italic;
+        font-size: xxx-large;
+        font-family: monospace;
+    }
 `
 ///////////////////////////////////////////////////////////////////////////////////TRIPLIST - ok
 export const StyleList = styled.div`    
@@ -232,7 +237,7 @@ export const StyleListExt = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 15px;
+    font-size: 1.2rem;
     margin-top: 20px;
     h1{
         font-style: italic;
@@ -251,8 +256,11 @@ export const StyleButton = styled.div`
         padding: 3px;
         margin: 10px;
         margin: 20px 50px 20px 50px;
+        
     }
     button:hover {
        box-shadow:  0 0 2px 2px;
     }      
 `
+////////////////////////////////////////////////////////////// RESPONSIVIDADE
+

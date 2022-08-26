@@ -5,6 +5,8 @@ import { BASE_URL_LOGIN } from "../constants/constants"
 import { useNavigate } from 'react-router-dom';
 import { StyleButton, StyleLoginExt } from "../style";
 import * as MyRouters from "../Rotas/Coodinator";
+import iconVoltar from "../img/icon-voltar.png"
+import iconOk from "../img/icon-ok.png"
 
 const LoginPage = () => {
 
@@ -50,8 +52,8 @@ const LoginPage = () => {
                 pattern="^.{3,}$"
             />
             <StyleButton>
-                <button type="button" onClick={fazerLogin}>[√] Login</button>
-                <button type="button" onClick={() => MyRouters.goToHome(navigate)}>[«] Voltar</button>
+                <button type="button" onClick={fazerLogin}><img src={iconOk}></img> Login</button>
+                <button type="button" onClick={() => MyRouters.goToHome(navigate)}><img src={iconVoltar}></img> Voltar</button>
             </StyleButton>
         </StyleLoginExt>
     )
