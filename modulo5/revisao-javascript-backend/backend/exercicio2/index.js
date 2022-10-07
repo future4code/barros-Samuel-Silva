@@ -1,6 +1,6 @@
 console.log("Exercício 2");
 
-console.log("Cadastrar Clientes");
+console.log("▬▬▬▬▬▬ Cadastrar Clientes ▬▬▬▬▬▬");
 
 const clients = [
 	{ id: 1, nome: "Fulano" },
@@ -9,23 +9,21 @@ const clients = [
 	{ id: 4, nome: "Fulana" }
 ]
 
-const newClient = (newId, nome) => {
-    if (clients.indexOf(newId) === -1) {
-        clients.push({id: newId, nome: nome})
-        console.log("Cliente cadastrado com sucesso!")
-        console.log(`Lista com novo cliente ${{clients}}`)
-        } else if (clients.indexOf(newId) > -1) {
-        console.log(`Erro. Parâmetro inválido! (id ${newId} já existe) `);
-        // console.log(clients.idexOf(newId))
-        }
+const newClient = (idClient, nameClient) => {
+    if (clients.filter(client => client.id === idClient).length > 0) {
+        return console.log(`Erro. Parâmetro inválido! (id ${idClient} já existe) `);
+    } else {
+        console.log("Cliente cadastrado com sucesso!")   
+        clients.push({id: idClient, nome: nameClient})
+    }
 }
-    newClient(5, "Maria") 
+    newClient(1, "Maria") 
 console.log(clients)
 
 
-console.log("Gerador de tabuada");
+console.log("▬▬▬▬▬▬ Gerador de tabuada ▬▬▬▬▬▬");
 
-const calculator = (multiple = 1) => {
+const calculator = (multiple) => {
     let total0 = multiple * 0;
     let total1 = multiple * 1;
     let total2 = multiple * 2;
@@ -60,4 +58,4 @@ const calculator = (multiple = 1) => {
         ]
     }
 }
- console.log(calculator())
+ console.log(calculator(2))
