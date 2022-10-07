@@ -9,16 +9,17 @@ const clients = [
 	{ id: 4, nome: "Fulana" }
 ]
 
-const newClient = (idClient, nameClient) => {
-    if (clients.indexOf(idClient) !== -1) {
-        console.log(`Erro ${clients.indexOf(idClient)}. Parâmetro inválido! (id ${idClient} já existe) `);
-    } else {
-        console.log("Cliente cadastrado com sucesso!")   
-        clients.push({id: idClient, nome: nameClient})
-        console.log(idClient)
-    }
+const newClient = (newId, nome) => {
+    if (clients.indexOf(newId) === -1) {
+        clients.push({id: newId, nome: nome})
+        console.log("Cliente cadastrado com sucesso!")
+        console.log(`Lista com novo cliente ${{clients}}`)
+        } else if (clients.indexOf(newId) > -1) {
+        console.log(`Erro. Parâmetro inválido! (id ${newId} já existe) `);
+        // console.log(clients.idexOf(newId))
+        }
 }
-    newClient(1, "Maria") 
+    newClient(5, "Maria") 
 console.log(clients)
 
 
