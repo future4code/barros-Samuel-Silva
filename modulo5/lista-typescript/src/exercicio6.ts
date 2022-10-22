@@ -15,12 +15,40 @@ type Client = {
     saldoTotal:number,
     debitos:number[]
 }
+const updatedBalance = (list: Client[]): Client[] => {
 
-function calculator(listClients:Client[]):number{
-    for (let i=0; i < listClients.length; i++){
-        let debClient:number = listClients[i].debitos.reduce((a:number,b:number)=> a+b,0)
-        return debClient
+    const balance = list.filter((client): Client => {
+
+        let sum: number;
+
+        if(client.debitos.length === 0){
+            client.debitos = [0]
+        }        
+        if(client.debitos.length > 0){
+            sum = client.debitos.reduce((a,b)=>{
+                return a+b
+            })
         }
 
+        client.debitos = []
+        client.debitos.push(sum)
+
+        return client
+    })
+
+    const sumBalance = balance.filter((client): Client => {
+        client.saldoTotal = client.saldoTotal - client.debitos[0]
+        client.debitos = []
+        return client
+    })
+
+    const negatives = sumBalance.filter((client)=>{
+        if(client.saldoTotal < 0){
+            return client
+        }
+    })
+
+    return negatives
 }
-console.log(calculator(listClients))
+
+console.table(updatedBalance(listClients))
