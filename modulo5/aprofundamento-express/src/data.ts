@@ -5,7 +5,7 @@ export const listToDo : ToDos[] = [
       "userId": 1,
       "id": 1,
       "title": "Pintar parede",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 2,
