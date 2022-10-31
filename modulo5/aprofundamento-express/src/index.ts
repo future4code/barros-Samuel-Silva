@@ -1,6 +1,5 @@
 import express,{Request, Response} from "express"
 import cors from 'cors'
-import {ToDos} from "./types"
 import {listToDo} from "./data"
 
 const app = express()
@@ -8,6 +7,8 @@ const app = express()
 app.use(express.json())
 
 app.use(cors())
+
+//EXERCICIO 1
 
 app.get("/ping", (req:Request, res:Response) => {          
     res.send("Pong! 🏓")
@@ -74,22 +75,71 @@ app.put("/change/:id",(req:Request, res:Response)=>{
 
 //EXERCICIO 7
 
-app.delete("/delete/:id",(req:Request, res:Response)=>{
+// app.delete("/playlists/track",(req:Request, res:Response)=>{
     
-    const toDoDelete = req.params.id
-   
-    if(!toDoDelete){
-        res.status(400).send("Faltou informar id da tarefa")    
-    } else {
-       function removeItem() {
-        return listToDo.filter(function(i) {
-            return i.id !== Number(toDoDelete)})
-       }
-       
-    }
-    res.status(200).send({listToDo})
-})
+//     const userId = req.headers.iduser
+//     const toDoId = req.query.idtoDo
 
+//     if( !userId && !toDoId ){
+//         res.status(400).send("Colocar obrigatoriament um id")
+//     }
+
+//     const userFiltered = listToDo.find((user)=>{
+//         return user.id === Number(userId)
+//     })
+//     let listFiltered 
+
+//     if(userFiltered){
+
+//         listFiltered = userFiltered.userId.find((item)=>{
+//             return item.userid === userId
+//         })
+
+//     }else{
+//         res.status(200).send("Não há um usuário com o id informado")
+//     }
+    
+//     let toDoDeleted 
+
+//     if(listFiltered ){
+//         toDoDeleted = listFiltered.tracks.find((toDo)=>{
+//             return toDo.id === toDoId
+
+//         })
+//     }else{
+//         res.status(200).send("Não há uma tarefa com o id informado")
+//     }  
+//     if(toDoDeleted){
+
+//         const toDoActual = toDoFiltered.filter((newToDo)=>{
+//             return newToDo.id !== toDoId
+//         })
+
+//        listFiltered.tracks = toDoActual
+        
+//         res.status(200).send(listFiltered)
+
+//     }else{
+//         res.status(200).send("Não há uma faixa com o id informado, portanto ela não poderá ser deleta")
+//     }
+
+// })
+
+//EXERCICIO 8
+
+app.get("/search", (req:Request, res:Response)=>{
+
+    const idSearch = req.query.userId 
+    if(!idSearch){
+        res.status(400).send("Erro")
+    }
+   
+    let listUser = listToDo.filter((toDo)=>{
+        return toDo.userId === Number(idSearch)
+    })
+        res.status(200).send(listUser)
+       
+})
 
 
 app.listen(3003, () => {
