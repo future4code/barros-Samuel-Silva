@@ -1,0 +1,26 @@
+GET https://viacep.com.br/ws/01247090/json/
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/cep
+content-type: application/json
+
+{
+    "cep": "36202422"
+}
+
+### 
+
+POST http://localhost:3003/cep
+content-type: application/json
+
+{
+  "cep": "36202422",
+  "logradouro": "Nossa Senhora",
+  "numero": "11",
+  "complemento": "NENHUM",
+  "bairro": "Sta Luzia",
+  "cidade": "Bcena",
+  "estado":"MG"
+}
