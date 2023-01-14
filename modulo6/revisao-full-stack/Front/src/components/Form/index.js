@@ -11,8 +11,8 @@ export default function Form({ productList, setProductList }) {
     const [visebleBottonClient, setVisibleButtonClient] = useState(true)
     const [visebleBottonProduct, setVisibleButtonProduct] = useState(true)
     const [form, onChange, restForm] = useForm({ client: "", product: "", qty: 1, deliveryDate: "" })
-    const [dataClient, isloadingClient, erroClient, upClient, setUpClient] = useRequestData('http://localhost:3006/clients');
-    const [dataProduct, isloadingProduct, erroProduct] = useRequestData('http://localhost:3006/products');
+    const [dataClient, isloadingClient, erroClient, upClient, setUpClient] = useRequestData('https://case-shopper.onrender.com/clients');
+    const [dataProduct, isloadingProduct, erroProduct] = useRequestData('https://case-shopper.onrender.com/products');
     const selectClient = !isloadingClient && dataClient && dataClient.find((dClient) => {
         return dClient.name === form.client;
     })
@@ -22,7 +22,7 @@ export default function Form({ productList, setProductList }) {
         {
             "name": form.client
         }
-        axios.post('http://localhost:3006/client', body, {})
+        axios.post('https://case-shopper.onrender.com/client', body, {})
             .then((response) => {
                 setUpClient(!upClient);
                 console.log(response);
@@ -63,7 +63,7 @@ export default function Form({ productList, setProductList }) {
                 "products": productListDB
             }
 
-            axios.post('http://localhost:3006/order', body, {})
+            axios.post('https://case-shopper.onrender.com/order', body, {})
                 .then((response) => {
                     console.log(response);
                     goToEndOrder(navigate)
