@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+Revisão Full-Stack - Case Shopper - Backend
+⌨️ Descrição do Projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TESTE TÉCNICO
+Olá, candidato(a)!
+Primeiro gostaríamos de agradecer por seu interesse em fazer parte do time de desenvolvimento
+da Shopper.com.br.
+Abaixo vamos descrever um teste técnico onde queremos avaliar o que você conhece sobre
+desenvolvimento de software.
+Você vai criar um formulário simples de cadastro de pedidos de supermercado. O sistema deve ser
+escrito em Python ou Javascript (node.js e/ou react.js).
+Quando terminar os requisitos, nos avise para que você possa nos apresentar seu código e
+responder algumas perguntas sobre suas decisões.
+Além da funcionalidade, avaliaremos principalmente organização e clareza no código, lembre-se
+que um programador lê mais código do que escreve, então códigos limpos e bem estruturados
+facilitam a vida de todos.
+Junto desse documento você receberá o arquivo products.csv , que é uma lista com produtos
+disponíveis e seus respectivos preços e estoque com as seguintes definições:
 
-## Available Scripts
+id = id do produto
+name = nome do produto
+price = preço do produto em reais.
+qty_stock = quantidade em estoque
 
-In the project directory, you can run:
 
-### `npm start`
+⚙️ Abaixo listamos os requisitos que seu sistema deve atender:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1- O sistema deve ter um formulário de cadastro de pedidos
+2- O usuário deve entrar com Nome do Cliente, Data de Entrega e uma lista de compras
+3- A lista de compras é composta por um ou mais produtos e a quantidade solicitada para
+cada um deles.
+4- O usuário pode alterar a quantidade de itens já cadastrados ou excluir um item que ele
+não queira mais.
+5- A cada alteração na lista de compras o sistema deve calcular o valor total do pedido.
+6- Todas essas informações devem ser salvas em um banco de dados que você vai modelar.
+7- Cada pedido salvo deve debitar a quantidade do produto correspondente de seu estoque.
+8- O sistema deve alertar o usuário caso a quantidade solicitada não esteja disponível no
+estoque.
+9- O sistema também deve ter uma função para mostrar o estoque atual exibindo: Nome do
+produto e a quantidade em estoque.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+📋 Documentação do Postman
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Link do Postman
 
-### `npm run build`
+🖇️ Deploy
+Links do Render
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Case_Shopper
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🛠️ Tecnologias utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+GitHub language countGitHub language countGitHub language countGitHub language count
 
-### `npm run eject`
+✒️ Pessoa Desenvolvedora do Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Samuel Garcia
+📌 Conclusão
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Aprimoramento no uso de endpoints, manipulação de Banco de Dados, revisão de Front, e comunuicação entre aplicações.
