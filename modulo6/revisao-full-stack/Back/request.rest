@@ -1,8 +1,8 @@
 ### Test    
-GET http://localhost:3006/ping
+GET https://case-shopper.onrender.com/ping
 
 ### Create a new Client
-POST http://localhost:3006/client
+POST https://case-shopper.onrender.com/client
 Content-Type: application/json
 
 {
@@ -10,19 +10,19 @@ Content-Type: application/json
 }
 
 ### Return all Clients
-GET http://localhost:3006/clients
+GET https://case-shopper.onrender.com/clients
 Content-Type: application/json
 
 ### Return all Products
-GET http://localhost:3006/products
+GET https://case-shopper.onrender.com/products
 Content-Type: application/json
 
 ### Return stock
-GET http://localhost:3006/stock
+GET https://case-shopper.onrender.com/stock
 Content-Type: application/json
 
 ### creat order
-POST http://localhost:3006/order
+POST https://case-shopper.onrender.com/order
 Content-Type: application/json
 
 {
