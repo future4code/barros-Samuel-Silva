@@ -1,0 +1,46 @@
+### Test    
+GET https://case-shopper.onrender.com/ping
+
+### Create a new Client
+POST https://case-shopper.onrender.com/client
+Content-Type: application/json
+
+{
+    "name":"Julio"
+}
+
+### Return all Clients
+GET https://case-shopper.onrender.com/clients
+Content-Type: application/json
+
+### Return all Products
+GET https://case-shopper.onrender.com/products
+Content-Type: application/json
+
+### Return stock
+GET https://case-shopper.onrender.com/stock
+Content-Type: application/json
+
+### creat order
+POST https://case-shopper.onrender.com/order
+Content-Type: application/json
+
+{
+    "fk_client": 1,
+    "delivery_date":"2023-01-04",
+    "products":[
+        {
+            "id":1,
+            "qty":10
+        },
+        {
+            "id":2,
+            "qty":1000
+        },
+        {
+            "id":3,
+            "qty":10
+        }
+    ]
+}
+
