@@ -1,0 +1,18 @@
+### Cadastro de usuários
+POST http://localhost:3006/createUser
+Content-Type: application/json
+
+{
+  "id": "111",
+  "name": "Samuel L Jackson",
+  "email": "sam@dundermifflin.com",
+  "password": "fa8s7e6fia7saaaaaae6f8a7s6e5gaes"
+}
+
+### Buscar todos os usuários
+GET http://localhost:3006/all
+Content-Type: application/json
+
+### Apagar um usuário
+DELETE http://localhost:3006/1674003674701
+Content-Type: application/json
