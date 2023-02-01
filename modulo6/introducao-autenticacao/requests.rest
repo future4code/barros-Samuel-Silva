@@ -1,0 +1,25 @@
+//CRIA USUARIO
+###
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "email": "kallel@crypton.com" ,
+   "password": "super123"
+}
+
+// LOGIN
+### 
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "petter@parker.com" ,
+   "password": "spiderpeter"
+}
+
+//BUSCA POR ID E TOKEN
+###
+GET http://localhost:3003/user/profile/29b350ba-7152-43f3-8a85-0eb50cd7b6ef
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5YjM1MGJhLTcxNTItNDNmMy04YTg1LTBlYjUwY2Q3YjZlZiIsImlhdCI6MTY3NTIxNTgzNywiZXhwIjoxNjc1MjE1ODk3fQ.q3uypKjDkqE89wFkJL6BfHaP-wY8Dwkr777AjItK3PU
+Content-Type: application/json
