@@ -1,0 +1,32 @@
+### Criar usuário
+
+POST http://localhost:3306/user/signup
+Content-Type: application/json
+
+{
+   "name": "Mário", 
+   "nickname": "O Super Encanador", 
+   "email": "supermario@oscorp.com",
+   "password": "pvc9999",
+   "role": "admin"
+}
+
+###
+
+# @id = {{signup.response.body.newUser.id}}
+
+### Editar usuário
+
+//Token Normal: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyMzNlMDQwLTg5ZDItNGQyYS1iN2ZmLWVmNTg3MGQ0YTBlZSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NzU3NzIyOTcsImV4cCI6MTY3NTc3NTg5N30.BHAl5GIvTx17kcDkU-P7t9fkPISU8c10UA4oAkpXtkk
+
+//Token Admin: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExY2QzOGYwLWY0YTAtNDAyNy1iMmFkLTY5NWM5ZmFiOTFjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY3NTc3Mjc2OSwiZXhwIjoxNjc1Nzc2MzY5fQ.n2wzwa0c-zEwpgyVQSlDLnFya5SGdcAy1f0aXk2Zw48
+
+
+PUT http://localhost:3306/user/edit/b537efdd-8fa5-4183-8e0e-7f0b6ac3fbd5
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExY2QzOGYwLWY0YTAtNDAyNy1iMmFkLTY5NWM5ZmFiOTFjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY3NTc3Mjc2OSwiZXhwIjoxNjc1Nzc2MzY5fQ.n2wzwa0c-zEwpgyVQSlDLnFya5SGdcAy1f0aXk2Zw48
+
+{
+   "name": "Luigi Bros",
+   "nickname": "Irmão do Mário"
+}
