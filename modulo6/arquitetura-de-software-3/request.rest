@@ -1,0 +1,20 @@
+####
+POST http://localhost:3306/user/create
+Content-Type: application/json
+
+{
+    "name": "Garcia",
+    "nickname": "Junim2202",
+    "email": "jr2220@.com",
+    "password": "1234856"
+}
+
+###
+POST http://localhost:3306/movie/create
+Content-Type: application/json
+
+{
+    "title": "aula arquitetura 2",
+    "description": "Camadas",
+    "launch": "23/01"  
+}
