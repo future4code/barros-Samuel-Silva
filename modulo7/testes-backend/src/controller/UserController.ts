@@ -1,22 +1,18 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
-import { UserDatabase } from "../data/mySQL/UserDatabase";
-
-const userDatabase = new UserDatabase
 
 export class UserController {
-   
-    constructor(private userBusiness: UserBusiness){}
+
+    constructor(private userBusiness: UserBusiness) { }
 
 // BUSCAR POR ID
-
 
     public getUserById = async (req: Request, res: Response) => {
         try {
             const id = req.params.id
-           
+
             const users = await this.userBusiness.getUserById(id)
-           
+
             res.status(200).send(users)
         } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
