@@ -1,0 +1,12 @@
+//BUSCA USUARIO POR ID
+
+####
+GET http://localhost:3306/user/profile/35b62ff4-64af-4721-a4c5-d038c6f730cf
+Content-Type: application/json
+
+
+//BUSCA TODOS USUARIOS
+
+####
+GET http://localhost:3306/user/getAll
+Content-Type: application/json
